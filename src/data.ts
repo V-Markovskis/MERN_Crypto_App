@@ -1,5 +1,6 @@
 //https://openapi.coinstats.app/
 
+//current crypto price
 export const cryptoData = {
   result: [
     {
@@ -609,6 +610,7 @@ export const cryptoData = {
   },
 };
 
+//crypto bought
 export const cryptoAssets = [
   {
     id: 'bitcoin',
