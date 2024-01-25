@@ -11,6 +11,7 @@ function App() {
       <AppHeader />
       <Layout>
         <AppSider />
+        <AppSider />
         <AppContent />
       </Layout>
     </Layout>
