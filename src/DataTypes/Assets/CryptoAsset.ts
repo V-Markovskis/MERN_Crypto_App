@@ -3,4 +3,8 @@ export interface CryptoAsset {
   amount: number;
   price: number;
   date: Date;
+  grow?: boolean;
+  growPercent?: number;
+  totalAmount?: number;
+  totalProfit?: number;
 }
