@@ -1,10 +1,7 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { Card, Layout, List, Spin, Statistic, Typography, Tag } from 'antd';
+import React, { useContext } from 'react';
+import { Card, Layout, List, Statistic, Typography, Tag } from 'antd';
 import { ArrowDownOutlined, ArrowUpOutlined } from '@ant-design/icons';
-import { fetchAssets, fetchCrypto } from '../../api.ts';
-import { CryptoResult } from '../../DataTypes/Crypto/CryptoResult.ts';
-import { CryptoAsset } from '../../DataTypes/Assets/CryptoAsset.ts';
-import { capitalize, percentDifference } from '../../utils';
+import { capitalize } from '../../utils';
 import CryptoContext from '../../context/crypto-context.tsx';
 
 const siderStyle: React.CSSProperties = {
@@ -12,10 +9,7 @@ const siderStyle: React.CSSProperties = {
 };
 
 export default function AppSider() {
-  const { loading, assets } = useContext(CryptoContext);
-  if (loading) {
-    return <Spin fullscreen />;
-  }
+  const { assets } = useContext(CryptoContext);
 
   return (
     <Layout.Sider width="25%" style={siderStyle}>

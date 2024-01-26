@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 import { CryptoResult } from '../DataTypes/Crypto/CryptoResult.ts';
 import { CryptoAsset } from '../DataTypes/Assets/CryptoAsset.ts';
 import { fetchAssets, fetchCrypto } from '../api.ts';
@@ -45,3 +45,7 @@ export function CryptoContextProvider({ children }: { children: React.ReactNode 
 }
 
 export default CryptoContext;
+
+export function useCrypto() {
+  return useContext(CryptoContext);
+}
