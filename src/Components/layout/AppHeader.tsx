@@ -1,8 +1,8 @@
-import { Button, Layout, Modal, Select, SelectProps, Space } from 'antd';
+import { Button, Layout, Modal, Select, Space } from 'antd';
 import React, { useEffect, useState } from 'react';
 import { useCrypto } from '../../context/crypto-context.tsx';
-import { Simulate } from 'react-dom/test-utils';
-import keyPress = Simulate.keyPress;
+import CryptoInfoModal from '../CryptoInfoModal.tsx';
+import { CryptoResult } from '../../DataTypes/Crypto/CryptoResult.ts';
 
 const headerStyle: React.CSSProperties = {
   width: '100%',
@@ -17,10 +17,11 @@ const headerStyle: React.CSSProperties = {
 export default function AppHeader() {
   const [select, setSelect] = useState(false);
   const [modal, setModal] = useState(false);
+  const [coin, setCoin] = useState<CryptoResult | undefined>(undefined);
   const { crypto } = useCrypto();
 
   useEffect(() => {
-    const keypress = (event) => {
+    const keypress = (event: KeyboardEvent) => {
       if (event.key === '/') {
         setSelect((prev) => !prev);
       }
@@ -29,9 +30,10 @@ export default function AppHeader() {
     //if component gets destroyed
     return () => document.removeEventListener('keypress', keypress);
   }, []);
-  const handleSelect = (value) => {
+  function handleSelect(value: string) {
+    setCoin(crypto.find((c) => c.id === value));
     setModal(true);
-  };
+  }
   return (
     <Layout.Header style={headerStyle}>
       <Select
@@ -54,10 +56,8 @@ export default function AppHeader() {
         )}
       />
       <Button type="primary">Add Asset</Button>
-      <Modal open={modal} onOk={() => setModal(false)} onCancel={() => setModal(false)}>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
+      <Modal open={modal} onCancel={() => setModal(false)} footer={null}>
+        {coin && <CryptoInfoModal coin={coin} />}
       </Modal>
     </Layout.Header>
   );
