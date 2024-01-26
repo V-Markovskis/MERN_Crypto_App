@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { Card, Layout, List, Spin, Statistic, Typography } from 'antd';
+import { Card, Layout, List, Spin, Statistic, Typography, Tag } from 'antd';
 import { ArrowDownOutlined, ArrowUpOutlined } from '@ant-design/icons';
 import { fetchAssets, fetchCrypto } from '../../api.ts';
 import { CryptoResult } from '../../DataTypes/Crypto/CryptoResult.ts';
 import { CryptoAsset } from '../../DataTypes/Assets/CryptoAsset.ts';
-import { percentDifference } from '../../utils';
+import { capitalize, percentDifference } from '../../utils';
 
 const siderStyle: React.CSSProperties = {
   padding: '1rem',
@@ -50,7 +50,7 @@ export default function AppSider() {
       {assets.map((asset) => (
         <Card key={asset.id} style={{ marginBottom: '1rem' }}>
           <Statistic
-            title={asset.id}
+            title={capitalize(asset.id)}
             value={asset.amount}
             precision={2}
             valueStyle={{ color: asset.grow ? '#3f8600' : '#cf1322' }}
@@ -60,14 +60,22 @@ export default function AppSider() {
           <List
             size="small"
             dataSource={[
-              { title: 'Total Profit', value: asset.totalProfit },
-              { title: 'Asset Amount', value: asset.amount },
-              { title: 'Difference', value: asset.growPercent },
+              { title: 'Total Profit', value: asset.totalProfit, withTag: true },
+              { title: 'Asset Amount', value: asset.amount, isPlain: true },
+              // { title: 'Difference', value: asset.growPercent },
             ]}
             renderItem={(item) => (
               <List.Item>
                 <span>{item.title}</span>
-                <span>{item.value}</span>
+                <span>
+                  {item.withTag && <Tag color={asset.grow ? 'green' : 'red'}>{asset.growPercent}%</Tag>}
+                  {item.isPlain && item.value}
+                  {!item.isPlain && (
+                    <Typography.Text type={asset.grow ? 'success' : 'danger'}>
+                      {item.value!.toFixed(2)}$
+                    </Typography.Text>
+                  )}
+                </span>
               </List.Item>
             )}
           />
