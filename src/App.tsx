@@ -4,16 +4,19 @@ import { Layout } from 'antd';
 import AppHeader from './Components/layout/AppHeader.tsx';
 import AppSider from './Components/layout/AppSider.tsx';
 import AppContent from './Components/layout/AppContent.tsx';
+import { CryptoContextProvider } from './context/crypto-context.tsx';
 
 function App() {
   return (
-    <Layout>
-      <AppHeader />
+    <CryptoContextProvider>
       <Layout>
-        <AppSider />
-        <AppContent />
+        <AppHeader />
+        <Layout>
+          <AppSider />
+          <AppContent />
+        </Layout>
       </Layout>
-    </Layout>
+    </CryptoContextProvider>
   );
 }
 

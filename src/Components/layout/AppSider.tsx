@@ -11,36 +11,6 @@ const siderStyle: React.CSSProperties = {
 };
 
 export default function AppSider() {
-  const [loading, setLoading] = useState(false);
-  const [crypto, setCrypto] = useState<CryptoResult[]>([]);
-  const [assets, setAssets] = useState<CryptoAsset[]>([]);
-
-  useEffect(() => {
-    setLoading(true);
-    async function preload() {
-      const { result } = await fetchCrypto();
-      const assets = await fetchAssets();
-
-      setCrypto(result);
-      setAssets(
-        assets.map((asset) => {
-          const coin = result.find((coin) => coin.id === asset.id);
-          return {
-            //asset.price = price when crypto coin bought
-            //coin.price = current coin price
-            grow: asset.price < coin!.price,
-            growPercent: percentDifference(asset.price, coin!.price),
-            totalAmount: asset.amount * coin!.price,
-            totalProfit: asset.amount * coin!.price - asset.amount * asset.price,
-            ...asset,
-          };
-        }),
-      );
-      setLoading(false);
-    }
-    preload();
-  }, []);
-
   if (loading) {
     return <Spin fullscreen />;
   }
@@ -51,7 +21,7 @@ export default function AppSider() {
         <Card key={asset.id} style={{ marginBottom: '1rem' }}>
           <Statistic
             title={capitalize(asset.id)}
-            value={asset.amount}
+            value={asset.totalAmount}
             precision={2}
             valueStyle={{ color: asset.grow ? '#3f8600' : '#cf1322' }}
             prefix={asset.grow ? <ArrowUpOutlined /> : <ArrowDownOutlined />}
