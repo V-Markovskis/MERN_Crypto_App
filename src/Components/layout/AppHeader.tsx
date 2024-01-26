@@ -1,8 +1,9 @@
-import { Button, Layout, Modal, Select, Space } from 'antd';
+import { Button, Drawer, Layout, Modal, Select, Space } from 'antd';
 import React, { useEffect, useState } from 'react';
 import { useCrypto } from '../../context/crypto-context.tsx';
 import CryptoInfoModal from '../CryptoInfoModal.tsx';
 import { CryptoResult } from '../../DataTypes/Crypto/CryptoResult.ts';
+import AddAssetForm from '../AddAssetForm.tsx';
 
 const headerStyle: React.CSSProperties = {
   width: '100%',
@@ -17,6 +18,7 @@ const headerStyle: React.CSSProperties = {
 export default function AppHeader() {
   const [select, setSelect] = useState(false);
   const [modal, setModal] = useState(false);
+  const [drawer, setDrawer] = useState(false);
   const [coin, setCoin] = useState<CryptoResult | undefined>(undefined);
   const { crypto } = useCrypto();
 
@@ -55,10 +57,17 @@ export default function AppHeader() {
           </Space>
         )}
       />
-      <Button type="primary">Add Asset</Button>
+      <Button type="primary" onClick={() => setDrawer(true)}>
+        Add Asset
+      </Button>
+
       <Modal open={modal} onCancel={() => setModal(false)} footer={null}>
         {coin && <CryptoInfoModal coin={coin} />}
       </Modal>
+
+      <Drawer width={600} title="Add Asset" onClose={() => setDrawer(false)} open={drawer}>
+        <AddAssetForm />
+      </Drawer>
     </Layout.Header>
   );
 }
