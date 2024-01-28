@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { CryptoResult } from '../DataTypes/Crypto/CryptoResult.ts';
 import { Button, DatePicker, Divider, Form, InputNumber, Result, Select, Space } from 'antd';
+import type { DatePickerProps } from 'antd';
 import { useCrypto } from '../context/crypto-context.tsx';
 import CoinInfo from './CoinInfo.tsx';
 
@@ -25,6 +26,7 @@ export default function AddAssetForm({ onClose }: AddAssetFromProps) {
   const [coin, setCoin] = useState<CryptoResult | undefined>(undefined);
   // submitted - check if form gets submitted, <Result/> show
   const [submitted, setSubmitted] = useState(false);
+  const [dateString, setDateString] = useState('');
 
   if (submitted) {
     return (
@@ -68,11 +70,20 @@ export default function AddAssetForm({ onClose }: AddAssetFromProps) {
     amount: number;
     price: number;
     total: number;
-    date: Date;
+    date: string;
   };
 
   function onFinish(values: FieldType) {
-    console.log('values', values);
+    console.log(values);
+    if (coin) {
+      const newAsset = {
+        id: coin.id,
+        amount: values.amount,
+        price: values.price,
+        date: dateString,
+      };
+      console.log('newAsset', newAsset);
+    }
     setSubmitted(true);
   }
 
@@ -93,6 +104,10 @@ export default function AddAssetForm({ onClose }: AddAssetFromProps) {
       });
     }
   }
+
+  const onChangeTime: DatePickerProps['onChange'] = (date, dateString) => {
+    return setDateString(dateString);
+  };
 
   return (
     <Form
@@ -119,7 +134,7 @@ export default function AddAssetForm({ onClose }: AddAssetFromProps) {
       </Form.Item>
 
       <Form.Item<FieldType> label="Date & Time" name="date">
-        <DatePicker showTime />
+        <DatePicker onChange={onChangeTime} showTime />
       </Form.Item>
 
       <Form.Item<FieldType> label="Total" name="total">
