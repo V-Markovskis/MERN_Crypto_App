@@ -8,12 +8,30 @@ const CryptoContext = createContext({
   assets: [] as CryptoAsset[],
   crypto: [] as CryptoResult[],
   loading: false,
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  addAsset: (newAsset: CryptoAsset) => {},
 });
 
 export function CryptoContextProvider({ children }: { children: React.ReactNode }) {
   const [loading, setLoading] = useState(false);
   const [crypto, setCrypto] = useState<CryptoResult[]>([]);
   const [assets, setAssets] = useState<CryptoAsset[]>([]);
+
+  function mapAssets(assets: CryptoAsset[], result: CryptoResult[]) {
+    return assets.map((asset: CryptoAsset) => {
+      const coin = result.find((coin) => coin.id === asset.id);
+      return {
+        //asset.price = price when crypto coin bought
+        //coin.price = current coin price
+        grow: asset.price < coin!.price,
+        growPercent: percentDifference(asset.price, coin!.price),
+        totalAmount: asset.amount * coin!.price,
+        totalProfit: asset.amount * coin!.price - asset.amount * asset.price,
+        ...asset,
+      };
+    });
+  }
 
   useEffect(() => {
     setLoading(true);
@@ -22,26 +40,18 @@ export function CryptoContextProvider({ children }: { children: React.ReactNode 
       const assets = await fetchAssets();
 
       setCrypto(result);
-      setAssets(
-        assets.map((asset) => {
-          const coin = result.find((coin) => coin.id === asset.id);
-          return {
-            //asset.price = price when crypto coin bought
-            //coin.price = current coin price
-            grow: asset.price < coin!.price,
-            growPercent: percentDifference(asset.price, coin!.price),
-            totalAmount: asset.amount * coin!.price,
-            totalProfit: asset.amount * coin!.price - asset.amount * asset.price,
-            ...asset,
-          };
-        }),
-      );
+      setAssets(mapAssets(assets, result));
       setLoading(false);
     }
     preload();
   }, []);
+
+  function addAsset(newAsset: CryptoAsset) {
+    setAssets((prev) => mapAssets([...prev, newAsset], crypto));
+  }
+
   //creating tier-one provider, which provides data to all components within the provider
-  return <CryptoContext.Provider value={{ loading, crypto, assets }}>{children}</CryptoContext.Provider>;
+  return <CryptoContext.Provider value={{ loading, crypto, assets, addAsset }}>{children}</CryptoContext.Provider>;
 }
 
 export default CryptoContext;
