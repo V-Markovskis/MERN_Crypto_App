@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { CryptoResult } from '../DataTypes/Crypto/CryptoResult.ts';
-import { Button, DatePicker, Divider, Form, InputNumber, Result, Select, Space } from 'antd';
 import type { DatePickerProps } from 'antd';
+import { Button, DatePicker, Divider, Form, InputNumber, Result, Select, Space } from 'antd';
 import { useCrypto } from '../context/crypto-context.tsx';
 import CoinInfo from './CoinInfo.tsx';
 
@@ -26,7 +26,7 @@ export default function AddAssetForm({ onClose }: AddAssetFromProps) {
   const [coin, setCoin] = useState<CryptoResult | undefined>(undefined);
   // submitted - check if form gets submitted, <Result/> show
   const [submitted, setSubmitted] = useState(false);
-  const [dateString, setDateString] = useState('');
+  const [dateString, setDateString] = useState(new Date());
 
   if (submitted) {
     return (
@@ -106,7 +106,7 @@ export default function AddAssetForm({ onClose }: AddAssetFromProps) {
   }
 
   const onChangeTime: DatePickerProps['onChange'] = (date, dateString) => {
-    return setDateString(dateString);
+    return setDateString(new Date(dateString));
   };
 
   return (
