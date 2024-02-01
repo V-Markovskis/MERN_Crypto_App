@@ -7,4 +7,5 @@ export interface CryptoAsset {
   growPercent?: number;
   totalAmount?: number;
   totalProfit?: number;
+  name?: string;
 }
