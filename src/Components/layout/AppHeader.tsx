@@ -18,7 +18,7 @@ const headerStyle: React.CSSProperties = {
 export default function AppHeader() {
   const [select, setSelect] = useState(false);
   const [modal, setModal] = useState(false);
-  const [drawer, setDrawer] = useState(true);
+  const [drawer, setDrawer] = useState(false);
   const [coin, setCoin] = useState<CryptoResult | undefined>(undefined);
   const { crypto } = useCrypto();
 
