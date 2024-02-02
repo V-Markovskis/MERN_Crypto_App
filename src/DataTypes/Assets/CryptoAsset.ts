@@ -2,7 +2,7 @@ export interface CryptoAsset {
   id: string;
   amount: number;
   price: number;
-  date: Date;
+  date: string;
   grow?: boolean;
   growPercent?: number;
   totalAmount?: number;

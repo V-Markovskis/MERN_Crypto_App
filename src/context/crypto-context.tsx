@@ -37,7 +37,8 @@ export function CryptoContextProvider({ children }: { children: React.ReactNode 
   useEffect(() => {
     setLoading(true);
     async function preload() {
-      const { result } = await fetchCrypto();
+      const result = await fetchCrypto();
+      console.log('result', result);
       const assets = await fetchAssets();
 
       setCrypto(result);

@@ -1,9 +1,10 @@
 import { Table } from 'antd';
 import type { TableColumnsType } from 'antd';
 import { useCrypto } from '../context/crypto-context.tsx';
+import React from 'react';
 
 interface DataType {
-  key: string;
+  key: React.Key;
   name: string | undefined;
   price: number;
   amount: number;
@@ -33,8 +34,8 @@ const columns: TableColumnsType<DataType> = [
 export default function AssetsTable() {
   const { assets } = useCrypto();
 
-  const data = assets.map((asset) => ({
-    key: asset.id,
+  const data = assets.map((asset, key) => ({
+    key: key,
     name: asset.name,
     price: asset.price,
     amount: asset.amount,

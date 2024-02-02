@@ -26,7 +26,7 @@ export default function AddAssetForm({ onClose }: AddAssetFromProps) {
   const [coin, setCoin] = useState<CryptoResult | undefined>(undefined);
   // submitted - check if form gets submitted, <Result/> show
   const [submitted, setSubmitted] = useState(false);
-  const [date, setDate] = useState(new Date());
+  const [date, setDate] = useState('');
   const assetRef = useRef<FieldType>();
 
   if (submitted) {
@@ -71,7 +71,7 @@ export default function AddAssetForm({ onClose }: AddAssetFromProps) {
     amount: number;
     price: number;
     total?: number;
-    date: Date;
+    date: string;
   };
 
   function onFinish(values: FieldType) {
@@ -109,7 +109,7 @@ export default function AddAssetForm({ onClose }: AddAssetFromProps) {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   const onChangeTime: DatePickerProps['onChange'] = (date, dateString) => {
-    return setDate(new Date(dateString));
+    return setDate(dateString);
   };
 
   return (
