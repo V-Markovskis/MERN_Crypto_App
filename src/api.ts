@@ -16,7 +16,7 @@ export async function fetchCrypto(): Promise<CryptoResult[]> {
     method: 'GET',
     headers: {
       accept: 'application/json',
-      'X-API-KEY': 'UF7tA8M7HBW36qleNjr+4Xl+z66jFCDdmk+NiZvPxZ4=',
+      'X-API-KEY': import.meta.env.VITE_API_KEY,
     },
   };
 
