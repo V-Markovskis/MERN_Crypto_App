@@ -25,11 +25,11 @@ export default function CryptoInfoModal({ coin }: CryptoInfoModalProps) {
       </Typography.Paragraph>
       <Typography.Paragraph>
         <Typography.Text strong> PriceBTC: </Typography.Text>
-        {coin.priceBtc}
+        {coin.priceBtc.toFixed(5)}
       </Typography.Paragraph>
       <Typography.Paragraph>
         <Typography.Text strong> Market Cap: </Typography.Text>
-        {coin.marketCap}$
+        {coin.marketCap.toFixed(2)}$
       </Typography.Paragraph>
       {coin.contractAddress && (
         <Typography.Paragraph>
