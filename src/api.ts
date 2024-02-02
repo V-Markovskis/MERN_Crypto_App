@@ -1,6 +1,5 @@
 import { CryptoAsset } from './DataTypes/Assets/CryptoAsset.ts';
 import axios from 'axios';
-import { CryptoData } from './DataTypes/Crypto/CryptoData.ts';
 import { CryptoResult } from './DataTypes/Crypto/CryptoResult.ts';
 
 // use hardcoded data in data.ts
