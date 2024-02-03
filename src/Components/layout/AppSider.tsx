@@ -1,15 +1,20 @@
 import React, { useContext } from 'react';
-import { Card, Layout, List, Statistic, Typography, Tag } from 'antd';
+import { Card, Layout, List, Statistic, Typography, Tag, Button } from 'antd';
 import { ArrowDownOutlined, ArrowUpOutlined } from '@ant-design/icons';
 import { capitalize } from '../../utils';
 import CryptoContext from '../../context/crypto-context.tsx';
+import { deleteAsset } from '../../api.ts';
 
 const siderStyle: React.CSSProperties = {
   padding: '1rem',
 };
 
 export default function AppSider() {
-  const { assets } = useContext(CryptoContext);
+  const { assets, removeAsset } = useContext(CryptoContext);
+
+  async function handleDelete(assetId: string) {
+    await removeAsset(assetId);
+  }
 
   return (
     <Layout.Sider width="25%" style={siderStyle}>
@@ -45,6 +50,11 @@ export default function AppSider() {
               </List.Item>
             )}
           />
+          <div style={{ display: 'flex', justifyContent: 'center' }} onClick={() => handleDelete(asset.id)}>
+            <Button type="primary" danger>
+              Delete
+            </Button>
+          </div>
         </Card>
       ))}
     </Layout.Sider>

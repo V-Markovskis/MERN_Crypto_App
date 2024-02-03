@@ -1,34 +1,22 @@
 {
   "cryptoAssets": [
     {
-      "id": "bitcoin",
-      "amount": 0.02,
-      "price": 26244,
-      "date": "2024-02-02T12:00:00.000Z"
-    },
-    {
-      "id": "ethereum",
-      "amount": 5,
-      "price": 2400,
-      "date": "2024-02-02T12:00:00.000Z"
-    },
-    {
-      "id": "avalanche-2",
-      "amount": 21,
-      "price": 36.17,
-      "date": "2024-02-02 17:37:33"
-    },
-    {
-      "id": "litecoin",
-      "amount": 21,
-      "price": 68.18,
-      "date": "2024-02-02 17:38:15"
+      "id": "solana",
+      "amount": 1,
+      "price": 98.62,
+      "date": ""
     },
     {
       "id": "ripple",
-      "amount": 200,
-      "price": 0.5,
-      "date": "2024-02-02 17:44:50"
+      "amount": 1,
+      "price": 0.52,
+      "date": ""
+    },
+    {
+      "id": "bitcoin",
+      "amount": 1,
+      "price": 43041.6,
+      "date": "2024-02-03 15:12:48"
     }
   ]
 }

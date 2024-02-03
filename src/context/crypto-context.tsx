@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { CryptoResult } from '../DataTypes/Crypto/CryptoResult.ts';
 import { CryptoAsset } from '../DataTypes/Assets/CryptoAsset.ts';
-import { fetchAssets, fetchCrypto } from '../api.ts';
+import { deleteAsset, fetchAssets, fetchCrypto } from '../api.ts';
 import { percentDifference } from '../utils.ts';
 
 const CryptoContext = createContext({
@@ -11,6 +11,9 @@ const CryptoContext = createContext({
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   addAsset: (newAsset: CryptoAsset) => {},
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  removeAsset: (id: string) => {},
 });
 
 export function CryptoContextProvider({ children }: { children: React.ReactNode }) {
@@ -51,8 +54,17 @@ export function CryptoContextProvider({ children }: { children: React.ReactNode 
     setAssets((prev) => mapAssets([...prev, newAsset], crypto));
   }
 
+  async function removeAsset(id: string) {
+    await deleteAsset(id);
+    setAssets(assets.filter((asset) => asset.id !== id));
+  }
+
   //creating tier-one provider, which provides data to all components within the provider
-  return <CryptoContext.Provider value={{ loading, crypto, assets, addAsset }}>{children}</CryptoContext.Provider>;
+  return (
+    <CryptoContext.Provider value={{ loading, crypto, assets, addAsset, removeAsset }}>
+      {children}
+    </CryptoContext.Provider>
+  );
 }
 
 export default CryptoContext;

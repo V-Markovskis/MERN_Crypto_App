@@ -54,3 +54,11 @@ export async function postAsset(asset: CryptoAsset) {
     console.error(err);
   }
 }
+
+export async function deleteAsset(id: string) {
+  try {
+    await axios.delete(`http://localhost:3000/cryptoAssets/${id}`);
+  } catch (err) {
+    console.error(err);
+  }
+}
