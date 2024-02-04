@@ -26,7 +26,7 @@ export default function AppContent() {
         Portfolio:{' '}
         {assets
           .map((asset) => {
-            const coin = crypto.find((c) => c.id === asset.id);
+            const coin = crypto.find((c) => c.id === asset.name);
             return asset.amount * coin!.price;
           })
           .reduce((acc, v) => (acc += v), 0)

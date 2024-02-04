@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { CryptoResult } from '../DataTypes/Crypto/CryptoResult.ts';
 import { CryptoAsset } from '../DataTypes/Assets/CryptoAsset.ts';
-import { deleteAsset, fetchAssets, fetchCrypto } from '../api.ts';
+import { deleteAsset, fetchAssets, fetchCrypto, postAsset } from '../api.ts';
 import { percentDifference } from '../utils.ts';
 
 const CryptoContext = createContext({
@@ -23,7 +23,7 @@ export function CryptoContextProvider({ children }: { children: React.ReactNode 
 
   function mapAssets(assets: CryptoAsset[], result: CryptoResult[]) {
     return assets.map((asset: CryptoAsset) => {
-      const coin = result.find((coin) => coin.id === asset.id);
+      const coin = result.find((coin) => coin.id === asset.name);
       return {
         //asset.price = price when crypto coin bought
         //coin.price = current coin price
@@ -31,7 +31,6 @@ export function CryptoContextProvider({ children }: { children: React.ReactNode 
         growPercent: percentDifference(asset.price, coin!.price),
         totalAmount: asset.amount * coin!.price,
         totalProfit: asset.amount * coin!.price - asset.amount * asset.price,
-        name: coin!.name,
         ...asset,
       };
     });
@@ -50,13 +49,19 @@ export function CryptoContextProvider({ children }: { children: React.ReactNode 
     preload();
   }, []);
 
-  function addAsset(newAsset: CryptoAsset) {
+  async function addAsset(newAsset: CryptoAsset) {
+    await postAsset(newAsset);
+    console.log('newAsset', newAsset);
     setAssets((prev) => mapAssets([...prev, newAsset], crypto));
   }
 
   async function removeAsset(id: string) {
+    console.log('delete entered');
     await deleteAsset(id);
-    setAssets(assets.filter((asset) => asset.id !== id));
+    // const filteredAssets = assets.filter((asset) => asset.id !== id);
+    // setAssets(filteredAssets);
+    setAssets((prev) => prev.filter((prev) => prev.id !== id));
+    // mapAssets(assets, crypto);
   }
 
   //creating tier-one provider, which provides data to all components within the provider

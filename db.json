@@ -1,22 +1,3 @@
 {
-  "cryptoAssets": [
-    {
-      "id": "solana",
-      "amount": 1,
-      "price": 98.62,
-      "date": ""
-    },
-    {
-      "id": "ripple",
-      "amount": 1,
-      "price": 0.52,
-      "date": ""
-    },
-    {
-      "id": "bitcoin",
-      "amount": 1,
-      "price": 43041.6,
-      "date": "2024-02-03 15:12:48"
-    }
-  ]
+  "cryptoAssets": []
 }

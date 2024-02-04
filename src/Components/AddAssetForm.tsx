@@ -4,7 +4,6 @@ import type { DatePickerProps } from 'antd';
 import { Button, DatePicker, Divider, Form, InputNumber, Result, Select, Space } from 'antd';
 import { useCrypto } from '../context/crypto-context.tsx';
 import CoinInfo from './CoinInfo.tsx';
-import { postAsset } from '../api.ts';
 
 const validateMessages = {
   required: '${label} is required',
@@ -69,23 +68,25 @@ export default function AddAssetForm({ onClose }: AddAssetFromProps) {
   }
 
   type FieldType = {
+    id?: string;
     amount: number;
     price: number;
     total?: number;
     date: string;
   };
 
-  async function onFinish(values: FieldType) {
+  function onFinish(values: FieldType) {
     if (coin) {
       const newAsset = {
-        id: coin.id,
+        id: (Math.floor(Math.random() * 10000) + 1).toString(),
+        name: coin.id,
         amount: values.amount,
         price: values.price,
         date: date,
       };
       assetRef.current = newAsset;
       setSubmitted(true);
-      await postAsset(newAsset);
+      // await postAsset(newAsset);
       addAsset(newAsset);
     }
   }

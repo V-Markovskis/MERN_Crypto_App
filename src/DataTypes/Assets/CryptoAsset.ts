@@ -1,5 +1,6 @@
 export interface CryptoAsset {
-  id: string;
+  id?: string;
+  name: string;
   amount: number;
   price: number;
   date: string;
@@ -7,5 +8,5 @@ export interface CryptoAsset {
   growPercent?: number;
   totalAmount?: number;
   totalProfit?: number;
-  name?: string;
+  // name?: string;
 }

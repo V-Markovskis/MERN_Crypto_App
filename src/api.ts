@@ -62,3 +62,11 @@ export async function deleteAsset(id: string) {
     console.error(err);
   }
 }
+
+// export async function getSingleAsset() {
+//   try {
+//     await axios.get('');
+//   } catch (err) {
+//     console.error(err);
+//   }
+// }

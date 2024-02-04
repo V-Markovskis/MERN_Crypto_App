@@ -3,7 +3,6 @@ import { Card, Layout, List, Statistic, Typography, Tag, Button } from 'antd';
 import { ArrowDownOutlined, ArrowUpOutlined } from '@ant-design/icons';
 import { capitalize } from '../../utils';
 import CryptoContext from '../../context/crypto-context.tsx';
-import { deleteAsset } from '../../api.ts';
 
 const siderStyle: React.CSSProperties = {
   padding: '1rem',
@@ -13,6 +12,8 @@ export default function AppSider() {
   const { assets, removeAsset } = useContext(CryptoContext);
 
   async function handleDelete(assetId: string) {
+    console.log('delete triggered');
+    console.log('assetId', assetId);
     await removeAsset(assetId);
   }
 
@@ -21,7 +22,7 @@ export default function AppSider() {
       {assets.map((asset, key) => (
         <Card key={key} style={{ marginBottom: '1rem' }}>
           <Statistic
-            title={capitalize(asset.id)}
+            title={capitalize(asset.name!)}
             value={asset.totalAmount}
             precision={2}
             valueStyle={{ color: asset.grow ? '#3f8600' : '#cf1322' }}
@@ -50,8 +51,8 @@ export default function AppSider() {
               </List.Item>
             )}
           />
-          <div style={{ display: 'flex', justifyContent: 'center' }} onClick={() => handleDelete(asset.id)}>
-            <Button type="primary" danger>
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <Button type="primary" danger onClick={() => handleDelete(asset.id!)}>
               Delete
             </Button>
           </div>
