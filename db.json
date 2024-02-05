@@ -1,3 +1,11 @@
 {
-  "cryptoAssets": []
+  "cryptoAssets": [
+    {
+      "id": "3928",
+      "name": "ethereum",
+      "amount": 1,
+      "price": 2309.08,
+      "date": ""
+    }
+  ]
 }

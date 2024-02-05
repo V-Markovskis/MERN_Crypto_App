@@ -12,8 +12,6 @@ export default function AppSider() {
   const { assets, removeAsset } = useContext(CryptoContext);
 
   async function handleDelete(assetId: string) {
-    console.log('delete triggered');
-    console.log('assetId', assetId);
     await removeAsset(assetId);
   }
 

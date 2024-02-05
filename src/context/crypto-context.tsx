@@ -51,17 +51,12 @@ export function CryptoContextProvider({ children }: { children: React.ReactNode 
 
   async function addAsset(newAsset: CryptoAsset) {
     await postAsset(newAsset);
-    console.log('newAsset', newAsset);
     setAssets((prev) => mapAssets([...prev, newAsset], crypto));
   }
 
   async function removeAsset(id: string) {
-    console.log('delete entered');
     await deleteAsset(id);
-    // const filteredAssets = assets.filter((asset) => asset.id !== id);
-    // setAssets(filteredAssets);
     setAssets((prev) => prev.filter((prev) => prev.id !== id));
-    // mapAssets(assets, crypto);
   }
 
   //creating tier-one provider, which provides data to all components within the provider
