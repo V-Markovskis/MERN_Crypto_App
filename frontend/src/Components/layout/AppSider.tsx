@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Card, Layout, List, Statistic, Typography, Tag, Button } from 'antd';
 import { ArrowDownOutlined, ArrowUpOutlined } from '@ant-design/icons';
-import { capitalize } from '../../utils';
+import { capitalize } from '../../utils.ts';
 import CryptoContext from '../../context/crypto-context.tsx';
 
 const siderStyle: React.CSSProperties = {
