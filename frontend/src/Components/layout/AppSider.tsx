@@ -50,7 +50,7 @@ export default function AppSider() {
             )}
           />
           <div style={{ display: 'flex', justifyContent: 'center' }}>
-            <Button type="primary" danger onClick={() => handleDelete(asset.id!)}>
+            <Button type="primary" danger onClick={() => handleDelete(asset._id!)}>
               Delete
             </Button>
           </div>

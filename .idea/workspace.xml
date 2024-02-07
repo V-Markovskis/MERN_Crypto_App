@@ -5,49 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67858b12-7ffe-4398-a525-53cf05e9341f" name="Changes" comment="delete asset">
-      <change afterPath="$PROJECT_DIR$/backend/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/db.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/models/asset.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintignore" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.eslintignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintrc" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.eslintrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.prettierignore" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.prettierignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.prettierrc" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.prettierrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/db.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/img.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/img_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/vite.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/vite.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/AddAssetForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/AddAssetForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/AssetsTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/AssetsTable.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/CoinInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/CoinInfo.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/CryptoInfoModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/CryptoInfoModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/PortfolioChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/PortfolioChart.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/layout/AppContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/layout/AppContent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/layout/AppHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/layout/AppHeader.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/layout/AppLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/layout/AppLayout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/layout/AppSider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/layout/AppSider.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataTypes/Assets/CryptoAsset.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/DataTypes/Assets/CryptoAsset.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataTypes/Crypto/CryptoData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/DataTypes/Crypto/CryptoData.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataTypes/Crypto/CryptoResult.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/DataTypes/Crypto/CryptoResult.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/context/crypto-context.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/context/crypto-context.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/data.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/env.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/env.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/utils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.node.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/tsconfig.node.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vite.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Components/AddAssetForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/AddAssetForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Components/layout/AppSider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/layout/AppSider.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/DataTypes/Assets/CryptoAsset.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/DataTypes/Assets/CryptoAsset.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/context/crypto-context.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/context/crypto-context.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vite.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +24,20 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "V-Markovskis"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="32b92da1-3080-4d51-abd2-510491d25294" />
+        <option name="url" value="https://github.com/V-Markovskis/React_Crypto_App.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -95,9 +77,13 @@
   }
 }</component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Codelex\React-Crypto-App\backend" />
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Codelex\React-Crypto-App" />
+      <recent name="C:\Codelex\React-Crypto-App\backend" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Codelex\React-Crypto-App" />
+      <recent name="C:\Codelex\React-Crypto-App\backend" />
       <recent name="C:\Codelex\React-Crypto-App\frontend" />
       <recent name="C:\Codelex\React-Crypto-App\src\DataTypes\Assets" />
       <recent name="C:\Codelex\React-Crypto-App\src\DataTypes\Crypto" />
@@ -133,7 +119,10 @@
       <workItem from="1707162504659" duration="1648000" />
       <workItem from="1707164182574" duration="3629000" />
       <workItem from="1707214830141" duration="829000" />
-      <workItem from="1707232878876" duration="8029000" />
+      <workItem from="1707232878876" duration="8929000" />
+      <workItem from="1707320914752" duration="1890000" />
+      <workItem from="1707323057614" duration="19000" />
+      <workItem from="1707323084893" duration="13041000" />
     </task>
     <task id="LOCAL-00001" summary="delete asset">
       <option name="closed" value="true" />
@@ -156,6 +145,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

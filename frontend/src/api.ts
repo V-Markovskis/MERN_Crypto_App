@@ -39,7 +39,7 @@ export async function fetchCrypto(): Promise<CryptoResult[]> {
 
 export async function fetchAssets(): Promise<CryptoAsset[]> {
   try {
-    const response = await axios.get('http://localhost:3000/cryptoAssets');
+    const response = await axios.get('http://localhost:3000/assets');
     return response.data;
   } catch (err) {
     console.error(err);
@@ -49,7 +49,7 @@ export async function fetchAssets(): Promise<CryptoAsset[]> {
 
 export async function postAsset(asset: CryptoAsset) {
   try {
-    await axios.post('http://localhost:3000/cryptoAssets', asset);
+    await axios.post('http://localhost:3000/assets', asset);
   } catch (err) {
     console.error(err);
   }
@@ -57,7 +57,7 @@ export async function postAsset(asset: CryptoAsset) {
 
 export async function deleteAsset(id: string) {
   try {
-    await axios.delete(`http://localhost:3000/cryptoAssets/${id}`);
+    await axios.delete(`http://localhost:3000/assets/${id}`);
   } catch (err) {
     console.error(err);
   }

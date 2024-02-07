@@ -6,7 +6,11 @@ const { ObjectId } = require("mongodb");
 //init app & middleware
 const app = express();
 
-app.use(cors());
+const corsOptions = {
+    origin: 'http://localhost:5173',
+};
+
+app.use(cors(corsOptions));
 
 //middleware - convert received data from JSON to JS object
 app.use(express.json())
@@ -68,10 +72,11 @@ app.post('/assets', (req, res) => {
 })
 
 app.delete('/assets/:id', (req, res) => {
+    // console.log('delete request', req.params.id);
 
     if(ObjectId.isValid(req.params.id)) {
         db.collection('assets')
-            .deleteOne({_id: ObjectId(req.params.id)}) //CHECK HERE LATER
+            .deleteOne({_id: new ObjectId(req.params.id)}) //CHECK HERE LATER
             .then(result => {
                 res.status(200).json(result);
             })

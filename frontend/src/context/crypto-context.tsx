@@ -22,6 +22,7 @@ export function CryptoContextProvider({ children }: { children: React.ReactNode 
   const [assets, setAssets] = useState<CryptoAsset[]>([]);
 
   function mapAssets(assets: CryptoAsset[], result: CryptoResult[]) {
+    console.log('assets on render', assets);
     return assets.map((asset: CryptoAsset) => {
       const coin = result.find((coin) => coin.id === asset.name);
       return {
@@ -51,12 +52,16 @@ export function CryptoContextProvider({ children }: { children: React.ReactNode 
 
   async function addAsset(newAsset: CryptoAsset) {
     await postAsset(newAsset);
-    setAssets((prev) => mapAssets([...prev, newAsset], crypto));
+    // setAssets((prev) => mapAssets([...prev, newAsset], crypto));
+    const updatedAssets = await fetchAssets();
+    setAssets(mapAssets(updatedAssets, crypto));
   }
 
   async function removeAsset(id: string) {
     await deleteAsset(id);
-    setAssets((prev) => prev.filter((prev) => prev.id !== id));
+    // setAssets((prev) => prev.filter((prev) => prev.identifierId !== id));
+    const updatedAssets = await fetchAssets();
+    setAssets(mapAssets(updatedAssets, crypto));
   }
 
   //creating tier-one provider, which provides data to all components within the provider

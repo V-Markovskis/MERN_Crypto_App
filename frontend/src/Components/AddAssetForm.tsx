@@ -68,7 +68,7 @@ export default function AddAssetForm({ onClose }: AddAssetFromProps) {
   }
 
   type FieldType = {
-    id?: string;
+    identifierId?: string;
     amount: number;
     price: number;
     total?: number;
@@ -78,7 +78,7 @@ export default function AddAssetForm({ onClose }: AddAssetFromProps) {
   function onFinish(values: FieldType) {
     if (coin) {
       const newAsset = {
-        id: (Math.floor(Math.random() * 10000) + 1).toString(),
+        identifierId: (Math.floor(Math.random() * 10000) + 1).toString(),
         name: coin.id,
         amount: values.amount,
         price: values.price,
