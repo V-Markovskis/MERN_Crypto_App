@@ -10,7 +10,13 @@ const corsOptions = {
     origin: 'http://localhost:5173',
 };
 
-app.use(cors(corsOptions));
+const corsOptionsVercel = {
+    origin: process.env.VERCEL_URI,
+    methods: ['POST', 'GET', 'DELETE', 'PATCH'],
+    credentials: true
+}
+
+app.use(cors(corsOptions, corsOptionsVercel));
 
 //middleware - convert received data from JSON to JS object
 app.use(express.json())
