@@ -31,7 +31,7 @@ connectToDb((err) => {
 })
 
 // routes
-app.get('/api/assets', (req, res) => {
+app.get('/assets', (req, res) => {
     let assets = [];
 
     db.collection('assets')
@@ -45,7 +45,7 @@ app.get('/api/assets', (req, res) => {
         })
 })
 
-app.get('/api/assets/:id',(req, res) => {
+app.get('/assets/:id',(req, res) => {
 
     if(ObjectId.isValid(req.params.id)) {
         db.collection('assets')
@@ -61,7 +61,7 @@ app.get('/api/assets/:id',(req, res) => {
     }
 })
 
-app.post('/api/assets', (req, res) => {
+app.post('/assets', (req, res) => {
     const book = req.body;
 
     db.collection('assets')
@@ -74,7 +74,7 @@ app.post('/api/assets', (req, res) => {
         })
 })
 
-app.delete('/api/assets/:id', (req, res) => {
+app.delete('/assets/:id', (req, res) => {
     // console.log('delete request', req.params.id);
 
     if(ObjectId.isValid(req.params.id)) {
@@ -91,7 +91,7 @@ app.delete('/api/assets/:id', (req, res) => {
     }
 })
 
-app.patch('/api/assets/:id', (req, res) => {
+app.patch('/assets/:id', (req, res) => {
     const updates = req.body;
 
     if(ObjectId.isValid(req.params.id)) {
