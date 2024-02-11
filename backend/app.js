@@ -22,7 +22,7 @@ app.use(express.json())
 let db;
 connectToDb((err) => {
     if(!err) {
-        app.listen(3000, () => {
+        app.listen(8080, () => {
             console.log('app listening on port 3000');
         });
         //return db connection object
