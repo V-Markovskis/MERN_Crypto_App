@@ -1,6 +1,5 @@
 export interface CryptoAsset {
   _id?: string;
-  identifierId?: string;
   name: string;
   amount: number;
   price: number;

@@ -31,20 +31,6 @@ connectToDb((err) => {
     }
 })
 
-// routes
-// app.get('/assets', (req, res) => {
-//     let assets = [];
-//
-//     db.collection('assets')
-//         .find() //cursor - object that essentially points to a set of documents outlined by our query
-//         .forEach(asset => assets.push(asset))
-//         .then(() => {
-//             res.status(200).json(assets);
-//         })
-//         .catch(() => {
-//             res.status(500).json({error: 'Could not fetch data'});
-//         })
-// })
 app.get('/', (req, res) => {
     let assets = [];
 

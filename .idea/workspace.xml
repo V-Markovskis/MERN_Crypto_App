@@ -6,6 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="67858b12-7ffe-4398-a525-53cf05e9341f" name="Changes" comment="delete asset">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/api/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Components/AddAssetForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/AddAssetForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/DataTypes/Assets/CryptoAsset.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/DataTypes/Assets/CryptoAsset.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vercel.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/vercel.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,9 +76,9 @@
       <recent name="C:\Codelex\React-Crypto-App\backend" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Codelex\React-Crypto-App" />
       <recent name="C:\Codelex\React-Crypto-App\backend" />
       <recent name="C:\Codelex\React-Crypto-App\backend\api" />
-      <recent name="C:\Codelex\React-Crypto-App" />
       <recent name="C:\Codelex\React-Crypto-App\frontend" />
       <recent name="C:\Codelex\React-Crypto-App\src\DataTypes\Assets" />
     </key>
@@ -114,7 +118,7 @@
       <workItem from="1707323057614" duration="19000" />
       <workItem from="1707323084893" duration="13502000" />
       <workItem from="1707337961269" duration="66000" />
-      <workItem from="1707658686576" duration="20346000" />
+      <workItem from="1707658686576" duration="21142000" />
     </task>
     <task id="LOCAL-00001" summary="delete asset">
       <option name="closed" value="true" />
