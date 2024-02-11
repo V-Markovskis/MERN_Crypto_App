@@ -6,16 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="67858b12-7ffe-4398-a525-53cf05e9341f" name="Changes" comment="delete asset">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Components/AddAssetForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/AddAssetForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Components/layout/AppSider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/layout/AppSider.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/DataTypes/Assets/CryptoAsset.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/DataTypes/Assets/CryptoAsset.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/context/crypto-context.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/context/crypto-context.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vite.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,12 +15,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "V-Markovskis"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;V-Markovskis&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -122,7 +112,9 @@
       <workItem from="1707232878876" duration="8929000" />
       <workItem from="1707320914752" duration="1890000" />
       <workItem from="1707323057614" duration="19000" />
-      <workItem from="1707323084893" duration="13041000" />
+      <workItem from="1707323084893" duration="13502000" />
+      <workItem from="1707337961269" duration="66000" />
+      <workItem from="1707658686576" duration="908000" />
     </task>
     <task id="LOCAL-00001" summary="delete asset">
       <option name="closed" value="true" />
