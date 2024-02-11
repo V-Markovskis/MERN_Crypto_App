@@ -39,7 +39,7 @@ export async function fetchCrypto(): Promise<CryptoResult[]> {
 
 export async function fetchAssets(): Promise<CryptoAsset[]> {
   try {
-    const response = await axios.get('https://mern-crypto-app-backend.vercel.app:3000/assets');
+    const response = await axios.get('https://mern-crypto-app-backend.vercel.app/api');
     return response.data;
   } catch (err) {
     console.error(err);
