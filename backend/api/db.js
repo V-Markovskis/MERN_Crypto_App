@@ -7,6 +7,7 @@ let dbConnection;
 
 module.exports = {
     connectToDb: (cb) => {
+        console.log('mongo', URI);
         MongoClient.connect(URI).then((client) => {
             dbConnection = client.db();
             console.log('Connected successfully')
