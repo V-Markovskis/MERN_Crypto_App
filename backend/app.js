@@ -22,8 +22,8 @@ app.use(express.json())
 let db;
 connectToDb((err) => {
     if(!err) {
-        app.listen(8000, () => {
-            console.log('app listening on port 8000');
+        app.listen(8080, () => {
+            console.log('app listening on port 8080');
         });
         //return db connection object
         db = getDb();
