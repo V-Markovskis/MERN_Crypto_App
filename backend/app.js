@@ -7,7 +7,7 @@ const { ObjectId } = require("mongodb");
 const app = express();
 
 const corsOptions = {
-    origin: ['http://localhost:5173', process.env.VERCEL_URI],
+    origin: ['http://localhost:5173', process.env.VERCEL_URI, process.env.VERCEL_URI_SECOND],
     methods: ['POST', 'GET', 'DELETE', 'PATCH'],
     credentials: true
 };
