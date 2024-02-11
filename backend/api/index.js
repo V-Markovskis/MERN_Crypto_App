@@ -7,7 +7,7 @@ const { ObjectId } = require("mongodb");
 const app = express();
 
 const corsOptions = {
-    origin: ['http://localhost:5173', process.env.VERCEL_URI, process.env.VERCEL_URI_SECOND],
+    origin: ['http://localhost:5173', process.env.VERCEL_URI],
     methods: ['POST', 'GET', 'DELETE', 'PATCH'],
     credentials: true
 };
@@ -22,8 +22,8 @@ app.use(express.json())
 let db;
 connectToDb((err) => {
     if(!err) {
-        app.listen(8080, () => {
-            console.log('app listening on port 8080');
+        app.listen(8000, () => {
+            console.log('app listening on port 8000');
         });
         //return db connection object
         db = getDb();
