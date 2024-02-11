@@ -57,7 +57,7 @@ export async function postAsset(asset: CryptoAsset) {
 
 export async function deleteAsset(id: string) {
   try {
-    await axios.delete(`https://mern-crypto-app-backend.vercel.app:3000/assets:3000/assets/${id}`);
+    await axios.delete(`https://mern-crypto-app-backend.vercel.app:3000/assets/${id}`);
   } catch (err) {
     console.error(err);
   }
