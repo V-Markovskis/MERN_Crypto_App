@@ -7,16 +7,13 @@ const { ObjectId } = require("mongodb");
 const app = express();
 
 const corsOptions = {
-    origin: 'http://localhost:5173',
-};
-
-const corsOptionsVercel = {
-    origin: process.env.VERCEL_URI,
+    origin: ['http://localhost:5173', process.env.VERCEL_URI],
     methods: ['POST', 'GET', 'DELETE', 'PATCH'],
     credentials: true
-}
+};
 
-app.use(cors(corsOptions, corsOptionsVercel));
+app.use(cors(corsOptions));
+
 
 //middleware - convert received data from JSON to JS object
 app.use(express.json())
