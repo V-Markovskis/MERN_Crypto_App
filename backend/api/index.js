@@ -6,14 +6,15 @@ const { ObjectId } = require("mongodb");
 //init app & middleware
 const app = express();
 
-const corsOptions = {
-    origin: ['http://localhost:5173', process.env.VERCEL_URI],
-    methods: ['POST', 'GET', 'DELETE', 'PATCH'],
-    credentials: true
-};
+// const corsOptions = {
+//     origin: ['http://localhost:5173', process.env.VERCEL_URI],
+//     methods: ['POST', 'GET', 'DELETE', 'PATCH'],
+//     credentials: true
+// };
+//
+// app.use(cors(corsOptions));
 
-app.use(cors(corsOptions));
-
+app.use(cors());
 
 //middleware - convert received data from JSON to JS object
 app.use(express.json())
