@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="67858b12-7ffe-4398-a525-53cf05e9341f" name="Changes" comment="delete asset">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Components/AddAssetForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/AddAssetForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/DataTypes/Assets/CryptoAsset.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/DataTypes/Assets/CryptoAsset.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +114,7 @@
       <workItem from="1707323057614" duration="19000" />
       <workItem from="1707323084893" duration="13502000" />
       <workItem from="1707337961269" duration="66000" />
-      <workItem from="1707658686576" duration="7645000" />
+      <workItem from="1707658686576" duration="8673000" />
     </task>
     <task id="LOCAL-00001" summary="delete asset">
       <option name="closed" value="true" />
