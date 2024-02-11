@@ -32,19 +32,19 @@ connectToDb((err) => {
 })
 
 // routes
-app.get('/assets', (req, res) => {
-    let assets = [];
-
-    db.collection('assets')
-        .find() //cursor - object that essentially points to a set of documents outlined by our query
-        .forEach(asset => assets.push(asset))
-        .then(() => {
-            res.status(200).json(assets);
-        })
-        .catch(() => {
-            res.status(500).json({error: 'Could not fetch data'});
-        })
-})
+// app.get('/assets', (req, res) => {
+//     let assets = [];
+//
+//     db.collection('assets')
+//         .find() //cursor - object that essentially points to a set of documents outlined by our query
+//         .forEach(asset => assets.push(asset))
+//         .then(() => {
+//             res.status(200).json(assets);
+//         })
+//         .catch(() => {
+//             res.status(500).json({error: 'Could not fetch data'});
+//         })
+// })
 app.get('/', (req, res) => {
     let assets = [];
 
@@ -59,11 +59,11 @@ app.get('/', (req, res) => {
         })
 })
 
-app.get('/assets/:id',(req, res) => {
+app.get('/:id',(req, res) => {
 
     if(ObjectId.isValid(req.params.id)) {
         db.collection('assets')
-            .findOne({_id: ObjectId(req.params.id)}) //CHECK HERE LATER
+            .findOne({_id: new ObjectId(req.params.id)}) //CHECK HERE LATER
             .then(doc => {
                 res.status(200).json(doc);
             })
@@ -75,7 +75,7 @@ app.get('/assets/:id',(req, res) => {
     }
 })
 
-app.post('/assets', (req, res) => {
+app.post('/', (req, res) => {
     const book = req.body;
 
     db.collection('assets')
@@ -88,7 +88,7 @@ app.post('/assets', (req, res) => {
         })
 })
 
-app.delete('/assets/:id', (req, res) => {
+app.delete('/:id', (req, res) => {
     // console.log('delete request', req.params.id);
 
     if(ObjectId.isValid(req.params.id)) {
@@ -105,12 +105,12 @@ app.delete('/assets/:id', (req, res) => {
     }
 })
 
-app.patch('/assets/:id', (req, res) => {
+app.patch('/:id', (req, res) => {
     const updates = req.body;
 
     if(ObjectId.isValid(req.params.id)) {
         db.collection('assets')
-            .update({_id: ObjectId(req.params.id)}, {$set: updates}) //CHECK HERE LATER
+            .update({_id: new ObjectId(req.params.id)}, {$set: updates}) //CHECK HERE LATER
             .then(result => {
                 res.status(200).json(result);
             })
