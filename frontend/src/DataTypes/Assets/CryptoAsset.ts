@@ -4,7 +4,7 @@ export interface CryptoAsset {
   name: string;
   amount: number;
   price: number;
-  date: string;
+  date: string | string[];
   grow?: boolean;
   growPercent?: number;
   totalAmount?: number;

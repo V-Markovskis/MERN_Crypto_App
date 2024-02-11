@@ -26,7 +26,7 @@ export default function AddAssetForm({ onClose }: AddAssetFromProps) {
   const [coin, setCoin] = useState<CryptoResult | undefined>(undefined);
   // submitted - check if form gets submitted, <Result/> show
   const [submitted, setSubmitted] = useState(false);
-  const [date, setDate] = useState('');
+  const [date, setDate] = useState<string | string[]>('');
   const assetRef = useRef<FieldType>();
 
   if (submitted) {
@@ -72,7 +72,7 @@ export default function AddAssetForm({ onClose }: AddAssetFromProps) {
     amount: number;
     price: number;
     total?: number;
-    date: string;
+    date: string | string[];
   };
 
   function onFinish(values: FieldType) {
