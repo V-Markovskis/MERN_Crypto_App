@@ -16,7 +16,7 @@ const validateMessages = {
 };
 
 type AddAssetFromProps = {
-  onClose: () => void;
+  onClose?: () => void;
 };
 
 export default function AddAssetForm({ onClose }: AddAssetFromProps) {
@@ -84,7 +84,6 @@ export default function AddAssetForm({ onClose }: AddAssetFromProps) {
       };
       assetRef.current = newAsset;
       setSubmitted(true);
-      // await postAsset(newAsset);
       addAsset(newAsset);
     }
   }
