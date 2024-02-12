@@ -4,6 +4,8 @@ import type { DatePickerProps } from 'antd';
 import { Button, DatePicker, Divider, Form, InputNumber, Result, Select, Space } from 'antd';
 import { useCrypto } from '../context/crypto-context.tsx';
 import CoinInfo from './CoinInfo.tsx';
+import { CryptoAsset } from '../DataTypes/Assets/CryptoAsset.ts';
+import emptyCoin from '../emptyCoin/emptyCoin.ts';
 
 const validateMessages = {
   required: '${label} is required',
@@ -17,19 +19,23 @@ const validateMessages = {
 
 type AddAssetFromProps = {
   onClose?: () => void;
+  isEditing?: boolean;
+  setIsEditing?: (isEditing: boolean) => void;
+  asset: CryptoAsset;
 };
 
-export default function AddAssetForm({ onClose }: AddAssetFromProps) {
+export default function AddAssetForm({ onClose, asset, isEditing, setIsEditing }: AddAssetFromProps) {
   //[form] similar to ref here
   const [form] = Form.useForm();
   const { crypto, addAsset } = useCrypto();
-  const [coin, setCoin] = useState<CryptoResult | undefined>(undefined);
+  const [coin, setCoin] = useState<CryptoResult>(emptyCoin);
   // submitted - check if form gets submitted, <Result/> show
   const [submitted, setSubmitted] = useState(false);
   const [date, setDate] = useState<string | string[]>('');
+  const [initialAsset, setInitialAsset] = useState<CryptoAsset>(asset);
   const assetRef = useRef<FieldType>();
 
-  if (submitted) {
+  if (submitted && !isEditing) {
     return (
       <Result
         status="success"
@@ -44,11 +50,11 @@ export default function AddAssetForm({ onClose }: AddAssetFromProps) {
     );
   }
 
-  if (!coin) {
+  if (!isEditing && coin === emptyCoin) {
     return (
       <Select
         style={{ width: '100%' }}
-        onSelect={(val) => setCoin(crypto.find((c) => c.id === val))}
+        onSelect={(val) => setCoin(crypto.find((c) => c.id === val) ?? emptyCoin)}
         placeholder="Select coin"
         value="press / to open"
         //{options} - data set that goes into select

@@ -1,6 +1,8 @@
-import { Button, Modal } from 'antd';
+import { Button, Form, Input, Modal } from 'antd';
 import { CryptoAsset } from '../DataTypes/Assets/CryptoAsset.ts';
 import { useState } from 'react';
+import { capitalize } from '../utils.ts';
+import AddAssetForm from './AddAssetForm.tsx';
 
 type EditModalProps = {
   isEditing: boolean;
@@ -9,25 +11,18 @@ type EditModalProps = {
 };
 
 export default function EditModal({ asset, isEditing, setIsEditing }: EditModalProps) {
-  const [isModalOpen, setIsModalOpen] = useState(true);
-
-  const showModal = () => {
-    setIsModalOpen(true);
-  };
-
   const handleOk = () => {
-    setIsModalOpen(false);
+    setIsEditing(false);
   };
 
   const handleCancel = () => {
-    setIsModalOpen(false);
+    setIsEditing(false);
   };
 
   return (
     <>
-      <Modal title={asset.name} open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
-        <p>{asset.amount}</p>
-        <p>{asset.price}</p>
+      <Modal title={capitalize(asset.name)} open={isEditing} onOk={handleOk} onCancel={handleCancel}>
+        <AddAssetForm isEditing={isEditing} setIsEditing={setIsEditing} asset={asset} />
       </Modal>
     </>
   );
