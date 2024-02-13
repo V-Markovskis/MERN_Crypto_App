@@ -6,6 +6,7 @@ import { useCrypto } from '../context/crypto-context.tsx';
 import CoinInfo from './CoinInfo.tsx';
 import { CryptoAsset } from '../DataTypes/Assets/CryptoAsset.ts';
 import emptyCoin from '../emptyCoin/emptyCoin.ts';
+import dayjs from 'dayjs';
 
 const validateMessages = {
   required: '${label} is required',
@@ -27,7 +28,7 @@ type AddAssetFromProps = {
 export default function AddAssetForm({ onClose, asset, isEditing, setIsEditing }: AddAssetFromProps) {
   //[form] similar to ref here
   const [form] = Form.useForm();
-  const { crypto, addAsset } = useCrypto();
+  const { crypto, addAsset, editAssetContext } = useCrypto();
   const [coin, setCoin] = useState<CryptoResult>(emptyCoin);
   // submitted - check if form gets submitted, <Result/> show
   const [submitted, setSubmitted] = useState(false);
@@ -81,16 +82,26 @@ export default function AddAssetForm({ onClose, asset, isEditing, setIsEditing }
   };
 
   function onFinish(values: FieldType) {
+    console.log('values on save', values);
     if (coin) {
       const newAsset = {
-        name: coin.id,
+        name: isEditing ? initialAsset.name : coin.id,
         amount: values.amount,
         price: values.price,
-        date: date,
+        date: date ? date : initialAsset.date,
       };
       assetRef.current = newAsset;
       setSubmitted(true);
-      addAsset(newAsset);
+      if (isEditing) {
+        editAssetContext(newAsset);
+        setDate('');
+        setInitialAsset(asset);
+        if (setIsEditing) {
+          setIsEditing(!isEditing);
+        }
+      } else {
+        addAsset(newAsset);
+      }
     }
   }
 
@@ -130,6 +141,8 @@ export default function AddAssetForm({ onClose, asset, isEditing, setIsEditing }
           ? {
               amount: initialAsset.amount,
               price: initialAsset.price,
+              date: dayjs(initialAsset.date as string),
+              total: +(initialAsset.amount * initialAsset.price).toFixed(2),
             }
           : {
               price: +coin.price.toFixed(2),

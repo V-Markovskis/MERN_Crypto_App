@@ -63,6 +63,14 @@ export async function deleteAsset(id: string) {
   }
 }
 
+export async function editAsset(asset: CryptoAsset) {
+  try {
+    await axios.put(`http://localhost:8080/${asset._id}`, asset);
+  } catch (err) {
+    console.error(err);
+  }
+}
+
 // export async function getSingleAsset() {
 //   try {
 //     await axios.get('');

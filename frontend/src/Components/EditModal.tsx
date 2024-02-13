@@ -1,6 +1,5 @@
-import { Button, Form, Input, Modal } from 'antd';
+import { Modal } from 'antd';
 import { CryptoAsset } from '../DataTypes/Assets/CryptoAsset.ts';
-import { useState } from 'react';
 import { capitalize } from '../utils.ts';
 import AddAssetForm from './AddAssetForm.tsx';
 
