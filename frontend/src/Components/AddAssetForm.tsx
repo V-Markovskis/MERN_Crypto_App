@@ -125,9 +125,16 @@ export default function AddAssetForm({ onClose, asset, isEditing, setIsEditing }
       labelCol={{ span: 4 }}
       wrapperCol={{ span: 10 }}
       style={{ maxWidth: 600 }}
-      initialValues={{
-        price: +coin.price.toFixed(2),
-      }}
+      initialValues={
+        isEditing
+          ? {
+              amount: initialAsset.amount,
+              price: initialAsset.price,
+            }
+          : {
+              price: +coin.price.toFixed(2),
+            }
+      }
       onFinish={onFinish}
       validateMessages={validateMessages}
     >
@@ -152,7 +159,7 @@ export default function AddAssetForm({ onClose, asset, isEditing, setIsEditing }
 
       <Form.Item>
         <Button type="primary" htmlType="submit">
-          Add Asset
+          {isEditing ? 'Save' : 'Add Asset'}
         </Button>
       </Form.Item>
     </Form>

@@ -21,7 +21,7 @@ export default function EditModal({ asset, isEditing, setIsEditing }: EditModalP
 
   return (
     <>
-      <Modal title={capitalize(asset.name)} open={isEditing} onOk={handleOk} onCancel={handleCancel}>
+      <Modal title={capitalize(asset.name)} open={isEditing} onOk={handleOk} onCancel={handleCancel} footer={null}>
         <AddAssetForm isEditing={isEditing} setIsEditing={setIsEditing} asset={asset} />
       </Modal>
     </>

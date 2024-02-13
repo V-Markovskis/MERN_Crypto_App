@@ -22,7 +22,6 @@ export function CryptoContextProvider({ children }: { children: React.ReactNode 
   const [assets, setAssets] = useState<CryptoAsset[]>([]);
 
   function mapAssets(assets: CryptoAsset[], result: CryptoResult[]) {
-    console.log('assets on render', assets);
     return assets.map((asset: CryptoAsset) => {
       const coin = result.find((coin) => coin.id === asset.name);
       return {
