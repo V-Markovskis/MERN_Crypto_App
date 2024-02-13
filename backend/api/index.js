@@ -91,12 +91,12 @@ app.delete('/:id', (req, res) => {
     }
 })
 
-app.patch('/:id', (req, res) => {
+app.put('/:id', (req, res) => {
     const updates = req.body;
 
     if(ObjectId.isValid(req.params.id)) {
         db.collection('assets')
-            .update({_id: new ObjectId(req.params.id)}, {$set: updates}) //CHECK HERE LATER
+            .updateOne({_id: new ObjectId(req.params.id)}, {$set: updates}) //CHECK HERE LATER
             .then(result => {
                 res.status(200).json(result);
             })

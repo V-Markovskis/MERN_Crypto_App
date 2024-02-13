@@ -63,9 +63,11 @@ export async function deleteAsset(id: string) {
   }
 }
 
-export async function editAsset(asset: CryptoAsset) {
+export async function editAsset(asset: CryptoAsset, id: string) {
+  console.log('asset id of edit stage', id);
+  console.log('asset on edit stage', asset);
   try {
-    await axios.put(`http://localhost:8080/${asset._id}`, asset);
+    await axios.put(`http://localhost:8080/${id}`, asset);
   } catch (err) {
     console.error(err);
   }

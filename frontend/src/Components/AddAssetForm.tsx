@@ -93,13 +93,14 @@ export default function AddAssetForm({ onClose, asset, isEditing, setIsEditing }
       assetRef.current = newAsset;
       setSubmitted(true);
       if (isEditing) {
-        editAssetContext(newAsset);
+        editAssetContext(newAsset, asset._id!);
         setDate('');
         setInitialAsset(asset);
         if (setIsEditing) {
           setIsEditing(!isEditing);
         }
       } else {
+        console.log('asset on to post', newAsset);
         addAsset(newAsset);
       }
     }

@@ -16,7 +16,7 @@ const CryptoContext = createContext({
   removeAsset: (id: string) => {},
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
-  editAssetContext: (asset: CryptoAsset) => {},
+  editAssetContext: (asset: CryptoAsset, id: string) => {},
 });
 
 export function CryptoContextProvider({ children }: { children: React.ReactNode }) {
@@ -53,6 +53,7 @@ export function CryptoContextProvider({ children }: { children: React.ReactNode 
   }, []);
 
   async function addAsset(newAsset: CryptoAsset) {
+    console.log('asset on post stage', newAsset);
     await postAsset(newAsset);
     // setAssets((prev) => mapAssets([...prev, newAsset], crypto));
     const updatedAssets = await fetchAssets();
@@ -66,8 +67,8 @@ export function CryptoContextProvider({ children }: { children: React.ReactNode 
     setAssets(mapAssets(updatedAssets, crypto));
   }
 
-  async function editAssetContext(asset: CryptoAsset) {
-    await editAsset(asset);
+  async function editAssetContext(asset: CryptoAsset, id: string) {
+    await editAsset(asset, id);
     const updatedAssets = await fetchAssets();
     setAssets(mapAssets(updatedAssets, crypto));
   }
