@@ -53,7 +53,6 @@ export function CryptoContextProvider({ children }: { children: React.ReactNode 
   }, []);
 
   async function addAsset(newAsset: CryptoAsset) {
-    console.log('asset on post stage', newAsset);
     await postAsset(newAsset);
     // setAssets((prev) => mapAssets([...prev, newAsset], crypto));
     const updatedAssets = await fetchAssets();

@@ -22,7 +22,7 @@ type AddAssetFromProps = {
   onClose?: () => void;
   isEditing?: boolean;
   setIsEditing?: (isEditing: boolean) => void;
-  asset: CryptoAsset;
+  asset?: CryptoAsset;
 };
 
 export default function AddAssetForm({ onClose, asset, isEditing, setIsEditing }: AddAssetFromProps) {
@@ -33,7 +33,7 @@ export default function AddAssetForm({ onClose, asset, isEditing, setIsEditing }
   // submitted - check if form gets submitted, <Result/> show
   const [submitted, setSubmitted] = useState(false);
   const [date, setDate] = useState<string | string[]>('');
-  const [initialAsset, setInitialAsset] = useState<CryptoAsset>(asset);
+  const [initialAsset, setInitialAsset] = useState<CryptoAsset>(asset!);
   const assetRef = useRef<FieldType>();
 
   if (submitted && !isEditing) {
@@ -82,7 +82,6 @@ export default function AddAssetForm({ onClose, asset, isEditing, setIsEditing }
   };
 
   function onFinish(values: FieldType) {
-    console.log('values on save', values);
     if (coin) {
       const newAsset = {
         name: isEditing ? initialAsset.name : coin.id,
@@ -92,7 +91,7 @@ export default function AddAssetForm({ onClose, asset, isEditing, setIsEditing }
       };
       assetRef.current = newAsset;
       setSubmitted(true);
-      if (isEditing) {
+      if (isEditing && asset) {
         editAssetContext(newAsset, asset._id!);
         setDate('');
         setInitialAsset(asset);
@@ -100,7 +99,6 @@ export default function AddAssetForm({ onClose, asset, isEditing, setIsEditing }
           setIsEditing(!isEditing);
         }
       } else {
-        console.log('asset on to post', newAsset);
         addAsset(newAsset);
       }
     }
@@ -134,9 +132,11 @@ export default function AddAssetForm({ onClose, asset, isEditing, setIsEditing }
     <Form
       form={form}
       name="basic"
-      labelCol={{ span: 4 }}
+      labelCol={{ span: 6 }}
       wrapperCol={{ span: 10 }}
-      style={{ maxWidth: 600 }}
+      style={{
+        maxWidth: 600,
+      }}
       initialValues={
         isEditing
           ? {
@@ -159,11 +159,11 @@ export default function AddAssetForm({ onClose, asset, isEditing, setIsEditing }
         <InputNumber placeholder="Enter coin amount" onChange={handleAmountChange} style={{ width: '100%' }} />
       </Form.Item>
 
-      <Form.Item<FieldType> label="Price" name="price">
+      <Form.Item<FieldType> label="Price" name="price" rules={[{ required: true, type: 'number', min: 0 }]}>
         <InputNumber onChange={handlePriceChange} style={{ width: '100%' }} step={0.01} />
       </Form.Item>
 
-      <Form.Item<FieldType> label="Date & Time" name="date">
+      <Form.Item<FieldType> label="Date & Time" name="date" rules={[{ required: true }]}>
         <DatePicker onChange={onChangeTime} showTime />
       </Form.Item>
 

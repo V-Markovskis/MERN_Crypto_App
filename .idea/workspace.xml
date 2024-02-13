@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="67858b12-7ffe-4398-a525-53cf05e9341f" name="Changes" comment="delete asset">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/api/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/Components/AddAssetForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/AddAssetForm.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/api.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/context/crypto-context.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/context/crypto-context.tsx" afterDir="false" />
@@ -122,7 +121,7 @@
       <workItem from="1707739375312" duration="5409000" />
       <workItem from="1707763559098" duration="11240000" />
       <workItem from="1707827975262" duration="9368000" />
-      <workItem from="1707838208871" duration="932000" />
+      <workItem from="1707838208871" duration="4799000" />
     </task>
     <task id="LOCAL-00001" summary="delete asset">
       <option name="closed" value="true" />
