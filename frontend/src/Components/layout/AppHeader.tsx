@@ -1,4 +1,4 @@
-import { Button, Drawer, Layout, Modal, Select, Space } from 'antd';
+import { Button, Drawer, Layout, Modal, Select, Space, Switch } from 'antd';
 import React, { useEffect, useState } from 'react';
 import { useCrypto } from '../../context/crypto-context.tsx';
 import CryptoInfoModal from '../CryptoInfoModal.tsx';
@@ -15,7 +15,12 @@ const headerStyle: React.CSSProperties = {
   alignItems: 'center',
 };
 
-export default function AppHeader() {
+type AppHeaderProps = {
+  isDarkTheme: boolean;
+  setIsDarkTheme: (isDarkTheme: boolean) => void;
+};
+
+export default function AppHeader({ isDarkTheme, setIsDarkTheme }: AppHeaderProps) {
   const [select, setSelect] = useState(false);
   const [modal, setModal] = useState(false);
   const [drawer, setDrawer] = useState(false);
@@ -38,6 +43,12 @@ export default function AppHeader() {
   }
   return (
     <Layout.Header style={headerStyle}>
+      <Switch
+        checkedChildren="Dark Mode On"
+        unCheckedChildren="Dark Mode Off"
+        defaultChecked
+        onClick={() => setIsDarkTheme(!isDarkTheme)}
+      />
       <Select
         style={{ width: 250 }}
         open={select}

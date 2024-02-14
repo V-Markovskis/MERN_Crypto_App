@@ -47,7 +47,7 @@ export function SingleAsset({ asset }: SingleAssetProps) {
           </List.Item>
         )}
       />
-      <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <div style={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
         <Button type="primary" danger onClick={() => handleDelete(asset._id!)}>
           Delete
         </Button>
