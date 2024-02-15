@@ -3,6 +3,7 @@ import AppLayout from './Components/layout/AppLayout.tsx';
 import './App.css';
 import { ConfigProvider, theme } from 'antd';
 import { useState } from 'react';
+import AuthProvider from './context/auth-context.tsx';
 
 function App() {
   const [isDarkTheme, setIsDarkTheme] = useState(true);
@@ -13,9 +14,12 @@ function App() {
           algorithm: isDarkTheme ? theme.darkAlgorithm : theme.defaultAlgorithm,
         }}
       >
-        <CryptoContextProvider>
-          <AppLayout isDarkTheme={isDarkTheme} setIsDarkTheme={setIsDarkTheme} />
-        </CryptoContextProvider>
+        <AuthProvider>
+          <CryptoContextProvider>
+            {/*<SupabaseAuth />*/}
+            <AppLayout isDarkTheme={isDarkTheme} setIsDarkTheme={setIsDarkTheme} />
+          </CryptoContextProvider>
+        </AuthProvider>
       </ConfigProvider>
     </>
   );

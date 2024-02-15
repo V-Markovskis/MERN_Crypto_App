@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67858b12-7ffe-4398-a525-53cf05e9341f" name="Changes" comment="delete asset">
-      <change afterPath="$PROJECT_DIR$/frontend/src/config/supabaseClient.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/Components/auth/SupabaseAuth.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/context/auth-context.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/env.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/env.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,11 +75,11 @@
       <recent name="C:\Codelex\React-Crypto-App\backend" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Codelex\React-Crypto-App\frontend\src\context" />
       <recent name="C:\Codelex\React-Crypto-App" />
       <recent name="C:\Codelex\React-Crypto-App\backend" />
       <recent name="C:\Codelex\React-Crypto-App\backend\api" />
       <recent name="C:\Codelex\React-Crypto-App\frontend" />
-      <recent name="C:\Codelex\React-Crypto-App\src\DataTypes\Assets" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -125,7 +124,7 @@
       <workItem from="1707838208871" duration="7193000" />
       <workItem from="1707932109057" duration="9198000" />
       <workItem from="1708001830874" duration="2125000" />
-      <workItem from="1708019504472" duration="1192000" />
+      <workItem from="1708019504472" duration="8269000" />
     </task>
     <task id="LOCAL-00001" summary="delete asset">
       <option name="closed" value="true" />
