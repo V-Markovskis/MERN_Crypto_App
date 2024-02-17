@@ -23,14 +23,14 @@ export default function SupabaseAuth() {
 
   const handleLogout = async () => {
     try {
-      await supabase.auth.signOut(); // Sign out the user
+      await supabase.auth.signOut();
     } catch (error) {
       console.error('Error signing out:', error);
     }
   };
 
   if (!session) {
-    return <Auth supabaseClient={supabase} appearance={{ theme: ThemeSupa }} />;
+    return <Auth supabaseClient={supabase} appearance={{ theme: ThemeSupa }} providers={[]} />;
   } else {
     return (
       <>

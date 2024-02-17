@@ -5,12 +5,14 @@ import { ArrowDownOutlined, ArrowUpOutlined } from '@ant-design/icons';
 import EditModal from './EditModal.tsx';
 import { useContext, useState } from 'react';
 import CryptoContext from '../context/crypto-context.tsx';
+import { useAuth } from '../context/auth-context.tsx';
 
 type SingleAssetProps = {
   asset: CryptoAsset;
 };
 
 export function SingleAsset({ asset }: SingleAssetProps) {
+  const { session } = useAuth();
   const { removeAsset } = useContext(CryptoContext);
   const [isEditing, setIsEditing] = useState(false);
 
@@ -47,18 +49,20 @@ export function SingleAsset({ asset }: SingleAssetProps) {
           </List.Item>
         )}
       />
-      <div style={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
-        <Button type="primary" danger onClick={() => handleDelete(asset._id!)}>
-          Delete
-        </Button>
-        {isEditing ? (
-          <EditModal isEditing={isEditing} setIsEditing={setIsEditing} asset={asset} />
-        ) : (
-          <Button type="primary" onClick={() => setIsEditing(!isEditing)}>
-            Edit
+      {session && (
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
+          <Button type="primary" danger onClick={() => handleDelete(asset._id!)}>
+            Delete
           </Button>
-        )}
-      </div>
+          {isEditing ? (
+            <EditModal isEditing={isEditing} setIsEditing={setIsEditing} asset={asset} />
+          ) : (
+            <Button type="primary" onClick={() => setIsEditing(!isEditing)}>
+              Edit
+            </Button>
+          )}
+        </div>
+      )}
     </Card>
   );
 }

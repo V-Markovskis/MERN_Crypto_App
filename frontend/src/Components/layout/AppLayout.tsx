@@ -6,8 +6,8 @@ import { useContext } from 'react';
 import CryptoContext from '../../context/crypto-context.tsx';
 
 type AppLayoutProps = {
-  isDarkTheme: boolean;
-  setIsDarkTheme: (isDarkTheme: boolean) => void;
+  isDarkTheme?: boolean;
+  setIsDarkTheme?: (isDarkTheme: boolean) => void;
 };
 
 export default function AppLayout({ isDarkTheme, setIsDarkTheme }: AppLayoutProps) {
@@ -19,7 +19,7 @@ export default function AppLayout({ isDarkTheme, setIsDarkTheme }: AppLayoutProp
 
   return (
     <Layout>
-      <AppHeader isDarkTheme={isDarkTheme} setIsDarkTheme={setIsDarkTheme} />
+      {isDarkTheme && setIsDarkTheme && <AppHeader isDarkTheme={isDarkTheme} setIsDarkTheme={setIsDarkTheme} />}
       <Layout>
         <AppSider />
         <AppContent />

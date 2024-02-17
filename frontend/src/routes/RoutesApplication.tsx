@@ -1,9 +1,8 @@
-import './App.css';
 import { Route, Routes } from 'react-router-dom';
-import { AppContainer } from './Components/AppContainer.tsx';
-import { ResetPassword } from './Components/ResetPassword.tsx';
+import { ResetPassword } from '../Components/ResetPassword.tsx';
+import { AppContainer } from '../Components/AppContainer.tsx';
 
-function App() {
+export function RoutesApplication() {
   return (
     <>
       <Routes>
@@ -14,4 +13,4 @@ function App() {
   );
 }
 
-export default App;
+export default RoutesApplication;
