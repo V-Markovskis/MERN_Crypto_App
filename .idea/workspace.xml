@@ -5,17 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67858b12-7ffe-4398-a525-53cf05e9341f" name="Changes" comment="delete asset">
-      <change afterPath="$PROJECT_DIR$/frontend/src/Components/AppContainer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/Components/ResetPassword.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/routes/RoutesApplication.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Components/SingleAsset.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/SingleAsset.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Components/auth/SupabaseAuth.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/auth/SupabaseAuth.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Components/layout/AppLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/layout/AppLayout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Components/ResetPassword.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/ResetPassword.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +124,7 @@
       <workItem from="1708001830874" duration="2125000" />
       <workItem from="1708019504472" duration="8589000" />
       <workItem from="1708078668975" duration="7631000" />
-      <workItem from="1708180690877" duration="7408000" />
+      <workItem from="1708180690877" duration="15753000" />
     </task>
     <task id="LOCAL-00001" summary="delete asset">
       <option name="closed" value="true" />
