@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
 import supabase from '../config/supabaseClient.ts';
 import { Button, Form, Input } from 'antd';
+import { useNavigate } from 'react-router-dom';
 
 export function ResetPassword() {
+  const navigate = useNavigate();
   const [accessToken, setAccessToken] = useState('');
   const [refreshToken, setRefreshToken] = useState('');
 
@@ -25,14 +27,6 @@ export function ResetPassword() {
           access_token: accessToken,
           refresh_token: refreshToken,
         });
-
-        if (!accessToken) {
-          console.log('no access token');
-        }
-
-        if (!refreshToken) {
-          console.log('no refresh token');
-        }
 
         if (error) {
           alert(`Error signing in: ${error.message}`);
@@ -59,6 +53,7 @@ export function ResetPassword() {
 
       if (data) {
         alert('Password has been updated successfully!');
+        navigate('/');
       }
     } catch (error) {
       console.error('Error updating password', error);
