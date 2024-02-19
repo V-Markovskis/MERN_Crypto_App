@@ -4,7 +4,9 @@ import { useCrypto } from '../../context/crypto-context.tsx';
 import CryptoInfoModal from '../CryptoInfoModal.tsx';
 import { CryptoResult } from '../../DataTypes/Crypto/CryptoResult.ts';
 import AddAssetForm from '../AddAssetForm.tsx';
-import { ResetPasswordModal } from '../ResetPasswordModal.tsx';
+import { LoginRegisterModal } from '../LoginRegisterModal.tsx';
+import { useAuth } from '../../context/auth-context.tsx';
+import { handleLogout } from '../auth/SupabaseAuth.tsx';
 
 const headerStyle: React.CSSProperties = {
   width: '100%',
@@ -26,7 +28,9 @@ export default function AppHeader({ isDarkTheme, setIsDarkTheme }: AppHeaderProp
   const [modal, setModal] = useState(false);
   const [drawer, setDrawer] = useState(false);
   const [coin, setCoin] = useState<CryptoResult | undefined>(undefined);
+  const [isLogin, setIsLogin] = useState(false);
   const { crypto } = useCrypto();
+  const { session, setSession } = useAuth();
 
   useEffect(() => {
     const keypress = (event: KeyboardEvent) => {
@@ -42,6 +46,19 @@ export default function AppHeader({ isDarkTheme, setIsDarkTheme }: AppHeaderProp
     setCoin(crypto.find((c) => c.id === value));
     setModal(true);
   }
+
+  useEffect(() => {
+    if (session) {
+      setIsLogin(true);
+    }
+  }, [session]);
+
+  function handleExit() {
+    handleLogout();
+    setSession(null);
+    setIsLogin(false);
+  }
+
   return (
     <Layout.Header style={headerStyle}>
       <Switch
@@ -50,7 +67,13 @@ export default function AppHeader({ isDarkTheme, setIsDarkTheme }: AppHeaderProp
         defaultChecked
         onClick={() => setIsDarkTheme(!isDarkTheme)}
       />
-      <ResetPasswordModal />
+      {isLogin ? (
+        <Button type="primary" danger onClick={() => handleExit()}>
+          Logout
+        </Button>
+      ) : (
+        <LoginRegisterModal />
+      )}
       <Select
         style={{ width: 250 }}
         open={select}

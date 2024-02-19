@@ -2,20 +2,20 @@ import { Button, Modal } from 'antd';
 import { useState } from 'react';
 import SupabaseAuth from './auth/SupabaseAuth.tsx';
 
-export function ResetPasswordModal() {
+export function LoginRegisterModal() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const showModal = () => {
+  function showModal() {
     setIsModalOpen(true);
-  };
+  }
 
-  const handleOk = () => {
+  function handleOk() {
     setIsModalOpen(false);
-  };
+  }
 
-  const handleCancel = () => {
+  function handleCancel() {
     setIsModalOpen(false);
-  };
+  }
 
   return (
     <>
