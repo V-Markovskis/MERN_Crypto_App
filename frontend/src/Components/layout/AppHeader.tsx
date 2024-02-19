@@ -4,6 +4,7 @@ import { useCrypto } from '../../context/crypto-context.tsx';
 import CryptoInfoModal from '../CryptoInfoModal.tsx';
 import { CryptoResult } from '../../DataTypes/Crypto/CryptoResult.ts';
 import AddAssetForm from '../AddAssetForm.tsx';
+import { ResetPasswordModal } from '../ResetPasswordModal.tsx';
 
 const headerStyle: React.CSSProperties = {
   width: '100%',
@@ -49,6 +50,7 @@ export default function AppHeader({ isDarkTheme, setIsDarkTheme }: AppHeaderProp
         defaultChecked
         onClick={() => setIsDarkTheme(!isDarkTheme)}
       />
+      <ResetPasswordModal />
       <Select
         style={{ width: 250 }}
         open={select}

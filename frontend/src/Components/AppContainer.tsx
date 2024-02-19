@@ -2,7 +2,6 @@ import { ConfigProvider, theme } from 'antd';
 import { useState } from 'react';
 import AuthProvider from '../context/auth-context.tsx';
 import { CryptoContextProvider } from '../context/crypto-context.tsx';
-import SupabaseAuth from './auth/SupabaseAuth.tsx';
 import AppLayout from './layout/AppLayout.tsx';
 
 export function AppContainer() {
@@ -16,7 +15,6 @@ export function AppContainer() {
       >
         <AuthProvider>
           <CryptoContextProvider>
-            <SupabaseAuth />
             <AppLayout isDarkTheme={isDarkTheme} setIsDarkTheme={setIsDarkTheme} />
           </CryptoContextProvider>
         </AuthProvider>

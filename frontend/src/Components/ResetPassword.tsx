@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import supabase from '../config/supabaseClient.ts';
-import { Button, Form, Input } from 'antd';
+import { Button, Form, Input, Typography } from 'antd';
 import { useNavigate } from 'react-router-dom';
 
 export function ResetPassword() {
@@ -61,37 +61,74 @@ export function ResetPassword() {
   };
 
   type FieldType = {
-    email: string;
+    password: string;
   };
 
   const onFinish = (passwordFromInput: FieldType) => {
     console.log('passwordFromInput:', passwordFromInput);
-    handlePasswordUpdate(passwordFromInput.email);
+    handlePasswordUpdate(passwordFromInput.password);
   };
 
   return (
     <Form
       name="basic"
-      labelCol={{ span: 8 }}
+      // labelCol={{ span: 8 }}
       wrapperCol={{ span: 16 }}
-      style={{ maxWidth: 600 }}
+      // style={{ maxWidth: 600 }}
       initialValues={{ remember: true }}
       onFinish={onFinish}
       autoComplete="off"
     >
-      <Form.Item<FieldType>
-        label="Email"
-        name="email"
-        rules={[{ required: true, message: 'Please input your email!' }]}
-      >
-        <Input />
-      </Form.Item>
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <div
+          style={{
+            maxWidth: 600,
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+            marginTop: '50px',
+            border: '1px solid black',
+            borderRadius: 10,
+            backgroundColor: 'grey',
+            padding: 100,
+          }}
+        >
+          <Typography.Title>Reset password form</Typography.Title>
+          <Form.Item<FieldType>
+            label="New password"
+            name="password"
+            rules={[{ required: true, message: 'Please input your password!' }]}
+          >
+            <Input />
+          </Form.Item>
 
-      <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-        <Button type="primary" htmlType="submit">
-          Submit
-        </Button>
-      </Form.Item>
+          <div style={{ display: 'flex', gap: '20px' }}>
+            <Form.Item wrapperCol={{ span: 16 }}>
+              <Button type="primary" htmlType="submit">
+                Save
+              </Button>
+            </Form.Item>
+
+            <Form.Item wrapperCol={{ span: 16 }}>
+              <Button
+                type="primary"
+                danger
+                onClick={async () => {
+                  try {
+                    await supabase.auth.signOut();
+                  } catch (error) {
+                    console.error('Error signing out:', error);
+                  }
+                  navigate('/');
+                }}
+              >
+                Cancel
+              </Button>
+            </Form.Item>
+          </div>
+        </div>
+      </div>
     </Form>
   );
 }
