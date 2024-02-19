@@ -6,9 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="67858b12-7ffe-4398-a525-53cf05e9341f" name="Changes" comment="delete asset">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Components/ResetPasswordModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/LoginRegisterModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Components/auth/SupabaseAuth.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/auth/SupabaseAuth.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/Components/layout/AppHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/layout/AppHeader.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/context/auth-context.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/context/auth-context.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +128,7 @@
       <workItem from="1708180690877" duration="17895000" />
       <workItem from="1708252708685" duration="1688000" />
       <workItem from="1708267550303" duration="1462000" />
-      <workItem from="1708344047305" duration="7965000" />
+      <workItem from="1708344047305" duration="11188000" />
     </task>
     <task id="LOCAL-00001" summary="delete asset">
       <option name="closed" value="true" />

@@ -28,7 +28,6 @@ export default function AppHeader({ isDarkTheme, setIsDarkTheme }: AppHeaderProp
   const [modal, setModal] = useState(false);
   const [drawer, setDrawer] = useState(false);
   const [coin, setCoin] = useState<CryptoResult | undefined>(undefined);
-  const [isLogin, setIsLogin] = useState(false);
   const { crypto } = useCrypto();
   const { session, setSession } = useAuth();
 
@@ -47,16 +46,9 @@ export default function AppHeader({ isDarkTheme, setIsDarkTheme }: AppHeaderProp
     setModal(true);
   }
 
-  useEffect(() => {
-    if (session) {
-      setIsLogin(true);
-    }
-  }, [session]);
-
   function handleExit() {
     handleLogout();
     setSession(null);
-    setIsLogin(false);
   }
 
   return (
@@ -67,7 +59,7 @@ export default function AppHeader({ isDarkTheme, setIsDarkTheme }: AppHeaderProp
         defaultChecked
         onClick={() => setIsDarkTheme(!isDarkTheme)}
       />
-      {isLogin ? (
+      {session ? (
         <Button type="primary" danger onClick={() => handleExit()}>
           Logout
         </Button>
