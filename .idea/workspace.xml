@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67858b12-7ffe-4398-a525-53cf05e9341f" name="Changes" comment="delete asset">
-      <change afterPath="$PROJECT_DIR$/frontend/src/context/dark-theme-context.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/Components/AppContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/AppContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Components/layout/AppHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/layout/AppHeader.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Components/layout/AppLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/layout/AppLayout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/context/auth-context.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/context/auth-context.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Components/ResetPassword.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/ResetPassword.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/context/dark-theme-context.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/context/dark-theme-context.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +130,7 @@
       <workItem from="1708252708685" duration="1688000" />
       <workItem from="1708267550303" duration="1462000" />
       <workItem from="1708344047305" duration="11283000" />
-      <workItem from="1708424246789" duration="7063000" />
+      <workItem from="1708424246789" duration="9127000" />
     </task>
     <task id="LOCAL-00001" summary="delete asset">
       <option name="closed" value="true" />

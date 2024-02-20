@@ -65,7 +65,6 @@ export function ResetPassword() {
   };
 
   const onFinish = (passwordFromInput: FieldType) => {
-    console.log('passwordFromInput:', passwordFromInput);
     handlePasswordUpdate(passwordFromInput.password);
   };
 

@@ -14,8 +14,6 @@ export function useDarkTheme() {
 const DarkThemeProvider = ({ children }: { children: React.ReactNode }) => {
   const [isDarkTheme, setIsDarkTheme] = useState(true);
 
-  console.log('isDarkTheme', isDarkTheme);
-
   return <DarkThemeContext.Provider value={{ isDarkTheme, setIsDarkTheme }}>{children}</DarkThemeContext.Provider>;
 };
 
