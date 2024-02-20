@@ -25,6 +25,8 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         const refreshToken = tokenObject.refresh_token;
 
         if (accessToken && refreshToken) {
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-ignore
           const { data, error } = await supabase.auth.setSession({
             access_token: accessToken,
             refresh_token: refreshToken,

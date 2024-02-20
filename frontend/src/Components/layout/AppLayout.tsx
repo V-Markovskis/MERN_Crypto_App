@@ -1,16 +1,13 @@
 import AppHeader from './AppHeader.tsx';
-import { Layout, Spin } from 'antd';
+import { ConfigProvider, Layout, Spin, theme } from 'antd';
 import AppSider from './AppSider.tsx';
 import AppContent from './AppContent.tsx';
 import { useContext } from 'react';
 import CryptoContext from '../../context/crypto-context.tsx';
+import { useDarkTheme } from '../../context/dark-theme-context.tsx';
 
-type AppLayoutProps = {
-  isDarkTheme?: boolean;
-  setIsDarkTheme?: (isDarkTheme: boolean) => void;
-};
-
-export default function AppLayout({ isDarkTheme, setIsDarkTheme }: AppLayoutProps) {
+export default function AppLayout() {
+  const { isDarkTheme } = useDarkTheme();
   const { loading } = useContext(CryptoContext);
 
   if (loading) {
@@ -18,12 +15,18 @@ export default function AppLayout({ isDarkTheme, setIsDarkTheme }: AppLayoutProp
   }
 
   return (
-    <Layout>
-      {isDarkTheme && setIsDarkTheme && <AppHeader isDarkTheme={isDarkTheme} setIsDarkTheme={setIsDarkTheme} />}
+    <ConfigProvider
+      theme={{
+        algorithm: isDarkTheme ? theme.darkAlgorithm : theme.defaultAlgorithm,
+      }}
+    >
       <Layout>
-        <AppSider />
-        <AppContent />
+        <AppHeader />
+        <Layout>
+          <AppSider />
+          <AppContent />
+        </Layout>
       </Layout>
-    </Layout>
+    </ConfigProvider>
   );
 }

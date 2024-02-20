@@ -1,24 +1,19 @@
 import { ConfigProvider, theme } from 'antd';
-import { useState } from 'react';
 import AuthProvider from '../context/auth-context.tsx';
 import { CryptoContextProvider } from '../context/crypto-context.tsx';
 import AppLayout from './layout/AppLayout.tsx';
+import DarkThemeProvider, { useDarkTheme } from '../context/dark-theme-context.tsx';
 
 export function AppContainer() {
-  const [isDarkTheme, setIsDarkTheme] = useState(true);
   return (
     <>
-      <ConfigProvider
-        theme={{
-          algorithm: isDarkTheme ? theme.darkAlgorithm : theme.defaultAlgorithm,
-        }}
-      >
+      <DarkThemeProvider>
         <AuthProvider>
           <CryptoContextProvider>
-            <AppLayout isDarkTheme={isDarkTheme} setIsDarkTheme={setIsDarkTheme} />
+            <AppLayout />
           </CryptoContextProvider>
         </AuthProvider>
-      </ConfigProvider>
+      </DarkThemeProvider>
     </>
   );
 }

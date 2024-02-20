@@ -7,6 +7,7 @@ import AddAssetForm from '../AddAssetForm.tsx';
 import { LoginRegisterModal } from '../LoginRegisterModal.tsx';
 import { useAuth } from '../../context/auth-context.tsx';
 import { handleLogout } from '../auth/SupabaseAuth.tsx';
+import { useDarkTheme } from '../../context/dark-theme-context.tsx';
 
 const headerStyle: React.CSSProperties = {
   width: '100%',
@@ -18,18 +19,14 @@ const headerStyle: React.CSSProperties = {
   alignItems: 'center',
 };
 
-type AppHeaderProps = {
-  isDarkTheme: boolean;
-  setIsDarkTheme: (isDarkTheme: boolean) => void;
-};
-
-export default function AppHeader({ isDarkTheme, setIsDarkTheme }: AppHeaderProps) {
+export default function AppHeader() {
   const [select, setSelect] = useState(false);
   const [modal, setModal] = useState(false);
   const [drawer, setDrawer] = useState(false);
   const [coin, setCoin] = useState<CryptoResult | undefined>(undefined);
   const { crypto } = useCrypto();
   const { session, setSession } = useAuth();
+  const { isDarkTheme, setIsDarkTheme } = useDarkTheme();
 
   useEffect(() => {
     const keypress = (event: KeyboardEvent) => {
