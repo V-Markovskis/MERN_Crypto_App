@@ -17,6 +17,7 @@ const headerStyle: React.CSSProperties = {
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
+  backgroundColor: 'orange',
 };
 
 export default function AppHeader() {
@@ -68,7 +69,7 @@ export default function AppHeader() {
         open={select}
         onSelect={handleSelect}
         onClick={() => setSelect((prev) => !prev)}
-        value="press / to open"
+        value="View Coin Info"
         //{options} - data set that goes into select
         options={crypto.map((coin) => ({
           label: coin.name,

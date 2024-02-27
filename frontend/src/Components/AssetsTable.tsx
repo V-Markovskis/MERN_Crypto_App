@@ -41,5 +41,5 @@ export default function AssetsTable() {
     amount: asset.amount,
   }));
 
-  return <Table pagination={false} columns={columns} dataSource={data} />;
+  return <Table pagination={false} columns={columns} dataSource={data} bordered />;
 }
