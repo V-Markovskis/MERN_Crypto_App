@@ -1,4 +1,4 @@
-import { Button, Drawer, Layout, Modal, Select, Space, Switch } from 'antd';
+import { Button, ConfigProvider, Drawer, Layout, Modal, Select, Space } from 'antd';
 import React, { useEffect, useState } from 'react';
 import { useCrypto } from '../../context/crypto-context.tsx';
 import CryptoInfoModal from '../CryptoInfoModal.tsx';
@@ -7,7 +7,6 @@ import AddAssetForm from '../AddAssetForm.tsx';
 import { LoginRegisterModal } from '../LoginRegisterModal.tsx';
 import { useAuth } from '../../context/auth-context.tsx';
 import { handleLogout } from '../auth/SupabaseAuth.tsx';
-import { useDarkTheme } from '../../context/dark-theme-context.tsx';
 
 const headerStyle: React.CSSProperties = {
   width: '100%',
@@ -17,7 +16,7 @@ const headerStyle: React.CSSProperties = {
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
-  backgroundColor: 'orange',
+  backgroundColor: '#0a0b1e',
 };
 
 export default function AppHeader() {
@@ -27,7 +26,6 @@ export default function AppHeader() {
   const [coin, setCoin] = useState<CryptoResult | undefined>(undefined);
   const { crypto } = useCrypto();
   const { session, setSession } = useAuth();
-  const { isDarkTheme, setIsDarkTheme } = useDarkTheme();
 
   useEffect(() => {
     const keypress = (event: KeyboardEvent) => {
@@ -51,12 +49,6 @@ export default function AppHeader() {
 
   return (
     <Layout.Header style={headerStyle}>
-      <Switch
-        checkedChildren="Dark Mode On"
-        unCheckedChildren="Dark Mode Off"
-        defaultChecked
-        onClick={() => setIsDarkTheme(!isDarkTheme)}
-      />
       {session ? (
         <Button type="primary" danger onClick={() => handleExit()}>
           Logout
@@ -87,13 +79,37 @@ export default function AppHeader() {
         Add Asset
       </Button>
 
-      <Modal open={modal} onCancel={() => setModal(false)} footer={null}>
+      <Modal
+        open={modal}
+        onCancel={() => setModal(false)}
+        footer={null}
+        styles={{
+          content: {
+            backgroundColor: '#292952',
+          },
+        }}
+      >
         {coin && <CryptoInfoModal coin={coin} />}
       </Modal>
 
-      <Drawer width={600} title="Add Asset" onClose={() => setDrawer(false)} open={drawer} destroyOnClose>
-        <AddAssetForm onClose={() => setDrawer(false)} />
-      </Drawer>
+      <ConfigProvider
+        theme={{
+          token: {
+            colorBgContainer: '#292952',
+          },
+        }}
+      >
+        <Drawer
+          width={600}
+          title="Add Asset"
+          onClose={() => setDrawer(false)}
+          open={drawer}
+          destroyOnClose
+          style={{ backgroundColor: '#1b1b3a' }}
+        >
+          <AddAssetForm onClose={() => setDrawer(false)} />
+        </Drawer>
+      </ConfigProvider>
     </Layout.Header>
   );
 }

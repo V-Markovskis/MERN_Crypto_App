@@ -3,12 +3,13 @@ import React from 'react';
 import { useCrypto } from '../../context/crypto-context.tsx';
 import PortfolioChart from '../PortfolioChart.tsx';
 import AssetsTable from '../AssetsTable.tsx';
+import { ShoppingOutlined } from '@ant-design/icons';
 
 const contentStyle: React.CSSProperties = {
   textAlign: 'center',
   minHeight: 'calc(100vh - 60px)',
   color: '#fff',
-  backgroundColor: 'gray',
+  backgroundColor: '#0a0b1e',
   padding: '1rem',
 };
 export default function AppContent() {
@@ -21,24 +22,26 @@ export default function AppContent() {
 
   return (
     <Layout.Content style={contentStyle}>
-      {/*level - h2, h3, etc. analogy*/}
-      <Card title="Total Asset Value" bordered={true} style={{ maxWidth: 300, position: 'absolute' }}>
-        <Typography.Title level={3} style={{ textAlign: 'center', color: '#fff' }}>
-          {' '}
-          {assets
-            .map((asset) => {
-              const coin = crypto.find((c) => c.id === asset.name);
-              return asset.amount * coin!.price;
-            })
-            .reduce((acc, v) => (acc += v), 0)
-            .toFixed(2)}
-          $
-        </Typography.Title>
+      <Card>
+        {/*level - h2, h3, etc. analogy*/}
+        <Card title="Total Asset Value" bordered={true} style={{ maxWidth: 300, position: 'absolute' }}>
+          <Typography.Title level={3} style={{ textAlign: 'center', color: '#fff' }}>
+            <ShoppingOutlined />{' '}
+            {assets
+              .map((asset) => {
+                const coin = crypto.find((c) => c.id === asset.name);
+                return asset.amount * coin!.price;
+              })
+              .reduce((acc, v) => (acc += v), 0)
+              .toFixed(2)}
+            $
+          </Typography.Title>
+        </Card>
+        <PortfolioChart />
+        <div style={{ paddingTop: 50 }}>
+          <AssetsTable />
+        </div>
       </Card>
-      <PortfolioChart />
-      <div style={{ paddingTop: 50 }}>
-        <AssetsTable />
-      </div>
     </Layout.Content>
   );
 }
