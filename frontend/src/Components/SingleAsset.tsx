@@ -57,8 +57,8 @@ export function SingleAsset({ asset }: SingleAssetProps) {
           )}
         />
         {session && (
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
-            <Button type="primary" danger onClick={() => handleDelete(asset._id!)}>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', marginTop: 10 }}>
+            <Button type="primary" onClick={() => handleDelete(asset._id!)} style={{ backgroundColor: '#4e0cc4' }}>
               Delete
             </Button>
             {isEditing ? (

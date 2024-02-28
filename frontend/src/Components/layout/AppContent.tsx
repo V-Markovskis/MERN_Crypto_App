@@ -24,7 +24,11 @@ export default function AppContent() {
     <Layout.Content style={contentStyle}>
       <Card>
         {/*level - h2, h3, etc. analogy*/}
-        <Card title="Total Asset Value" bordered={true} style={{ maxWidth: 300, position: 'absolute' }}>
+        <Card
+          title="Total Asset Value"
+          bordered={true}
+          style={{ maxWidth: 300, position: 'absolute', backgroundColor: '#292952' }}
+        >
           <Typography.Title level={3} style={{ textAlign: 'center', color: '#fff' }}>
             <ShoppingOutlined />{' '}
             {assets

@@ -16,8 +16,8 @@ export default function AppLayout() {
     <ConfigProvider
       theme={{
         token: {
-          // Alias Token
           colorBgContainer: '#1b1b3a',
+          colorPrimary: '#573ab2',
         },
       }}
     >

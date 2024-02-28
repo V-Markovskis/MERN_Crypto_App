@@ -50,7 +50,7 @@ export default function AppHeader() {
   return (
     <Layout.Header style={headerStyle}>
       {session ? (
-        <Button type="primary" danger onClick={() => handleExit()}>
+        <Button type="primary" onClick={() => handleExit()} style={{ backgroundColor: '#573ab2' }}>
           Logout
         </Button>
       ) : (

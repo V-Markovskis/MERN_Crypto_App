@@ -22,7 +22,17 @@ export function LoginRegisterModal() {
       <Button type="primary" onClick={showModal}>
         Login/Register
       </Button>
-      <Modal open={isModalOpen} onOk={handleOk} onCancel={handleCancel} footer={null}>
+      <Modal
+        open={isModalOpen}
+        onOk={handleOk}
+        onCancel={handleCancel}
+        footer={null}
+        styles={{
+          content: {
+            backgroundColor: '#292952',
+          },
+        }}
+      >
         <SupabaseAuth />
       </Modal>
     </>

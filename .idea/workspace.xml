@@ -5,18 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67858b12-7ffe-4398-a525-53cf05e9341f" name="Changes" comment="delete asset">
-      <change afterPath="$PROJECT_DIR$/frontend/src/Components/DELETEME/colors.less" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Components/AppContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/AppContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Components/AssetsTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/AssetsTable.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Components/DELETEME/colors.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Components/LoginRegisterModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/LoginRegisterModal.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/Components/SingleAsset.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/SingleAsset.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/Components/layout/AppContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/layout/AppContent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/Components/layout/AppHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/layout/AppHeader.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/Components/layout/AppLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/layout/AppLayout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Components/layout/AppSider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/layout/AppSider.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/context/dark-theme-context.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,6 +143,7 @@
       <workItem from="1709046961962" duration="1279000" />
       <workItem from="1709064251992" duration="3495000" />
       <workItem from="1709118939339" duration="6365000" />
+      <workItem from="1709125437677" duration="2828000" />
     </task>
     <task id="LOCAL-00001" summary="delete asset">
       <option name="closed" value="true" />

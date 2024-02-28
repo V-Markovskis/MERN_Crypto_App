@@ -1,4 +1,4 @@
-import { Table } from 'antd';
+import { ConfigProvider, Table } from 'antd';
 import type { TableColumnsType } from 'antd';
 import { useCrypto } from '../context/crypto-context.tsx';
 import React from 'react';
@@ -41,5 +41,15 @@ export default function AssetsTable() {
     amount: asset.amount,
   }));
 
-  return <Table pagination={false} columns={columns} dataSource={data} bordered />;
+  return (
+    <ConfigProvider
+      theme={{
+        token: {
+          colorBgContainer: '#292952',
+        },
+      }}
+    >
+      <Table pagination={false} columns={columns} dataSource={data} bordered />
+    </ConfigProvider>
+  );
 }
