@@ -25,11 +25,23 @@ export default function BestProfitCoin() {
         <Typography.Title level={3}>Highest Profit %</Typography.Title>
         <Divider />
         <Typography.Title level={3}>
-          <img src={bestProfitCoin.icon} alt={bestProfitCoin.name} style={{ width: 40, marginRight: 10 }} />
-          {capitalize(bestProfitCoin.name)}
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <img src={bestProfitCoin.icon} alt={bestProfitCoin.name} style={{ width: 40, marginRight: 10 }} />
+            {capitalize(bestProfitCoin.name)}
+          </div>
         </Typography.Title>
-        <Tag color="green">{bestProfitCoin.growPercent}%</Tag>
-        <Typography.Paragraph></Typography.Paragraph>
+        <Tag color="green" style={{ fontSize: '16px' }}>
+          {bestProfitCoin.growPercent}%
+        </Tag>
+        <Divider />
+        <Typography.Paragraph strong>Price Change</Typography.Paragraph>
+        <div style={{ display: 'flex' }}>
+          <Typography.Paragraph>1 hour: {bestProfitCoin.priceChange1h}$</Typography.Paragraph>
+          <Divider type="vertical" style={{ height: 20, borderLeft: '1px solid' }}></Divider>
+          <Typography.Paragraph>1 day: {bestProfitCoin.priceChange1d}$</Typography.Paragraph>
+          <Divider type="vertical" style={{ height: 20, borderLeft: '1px solid' }}></Divider>
+          <Typography.Paragraph>1 week: {bestProfitCoin.priceChange1w}$</Typography.Paragraph>
+        </div>
       </Card>
     </>
   );

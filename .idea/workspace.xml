@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67858b12-7ffe-4398-a525-53cf05e9341f" name="Changes" comment="delete asset">
-      <change afterPath="$PROJECT_DIR$/frontend/src/Components/BestProfitCoin.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/emptyCoin/emptyAsset.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Components/PortfolioChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/PortfolioChart.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Components/ResetPassword.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/ResetPassword.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Components/layout/AppContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/layout/AppContent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Components/layout/AppSider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/layout/AppSider.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/DataTypes/Assets/CryptoAsset.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/DataTypes/Assets/CryptoAsset.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/context/crypto-context.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/context/crypto-context.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Components/BestProfitCoin.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/BestProfitCoin.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +139,7 @@
       <workItem from="1709118939339" duration="6365000" />
       <workItem from="1709125437677" duration="5426000" />
       <workItem from="1709137822906" duration="5597000" />
-      <workItem from="1709198267387" duration="5827000" />
+      <workItem from="1709198267387" duration="8543000" />
     </task>
     <task id="LOCAL-00001" summary="delete asset">
       <option name="closed" value="true" />
