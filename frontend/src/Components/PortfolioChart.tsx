@@ -1,7 +1,7 @@
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
 import { useCrypto } from '../context/crypto-context.tsx';
-import { Card } from 'antd';
+import { Card, Empty } from 'antd';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -26,9 +26,7 @@ export default function PortfolioChart() {
   };
   return (
     <div>
-      <Card style={{ backgroundColor: '#292952' }}>
-        <Pie data={data} />
-      </Card>
+      <Card style={{ backgroundColor: '#292952' }}>{assets.length > 0 ? <Pie data={data} /> : <Empty />}</Card>
     </div>
   );
 }

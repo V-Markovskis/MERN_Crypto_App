@@ -12,4 +12,5 @@ export const emptyAsset: CryptoAsset = {
   priceChange1h: 0,
   priceChange1d: 0,
   priceChange1w: 0,
+  icon: '',
 };
