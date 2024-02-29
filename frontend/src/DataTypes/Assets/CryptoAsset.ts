@@ -8,5 +8,8 @@ export interface CryptoAsset {
   growPercent?: number;
   totalAmount?: number;
   totalProfit?: number;
-  // name?: string;
+  priceChange1h?: number;
+  priceChange1d?: number;
+  priceChange1w?: number;
+  icon?: string;
 }

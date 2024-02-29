@@ -89,7 +89,7 @@ export function ResetPassword() {
             marginTop: '50px',
             border: '1px solid black',
             borderRadius: 10,
-            backgroundColor: 'grey',
+            backgroundColor: '#292952',
             padding: 100,
           }}
         >
@@ -112,7 +112,7 @@ export function ResetPassword() {
             <Form.Item wrapperCol={{ span: 16 }}>
               <Button
                 type="primary"
-                danger
+                style={{ backgroundColor: '#4e0cc4' }}
                 onClick={async () => {
                   try {
                     await supabase.auth.signOut();
