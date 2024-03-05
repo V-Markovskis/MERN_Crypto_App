@@ -41,7 +41,7 @@ export async function fetchCrypto(): Promise<CryptoResult[]> {
 
 export async function fetchAssets(): Promise<CryptoAsset[]> {
   try {
-    const response = await axios.get('http://localhost:8080');
+    const response = await axios.get('https://mern-crypto-app-backend.vercel.app');
     return response.data;
   } catch (err) {
     console.error(err);
@@ -51,7 +51,7 @@ export async function fetchAssets(): Promise<CryptoAsset[]> {
 
 export async function postAsset(asset: CryptoAsset) {
   try {
-    await axios.post('http://localhost:8080', asset);
+    await axios.post('https://mern-crypto-app-backend.vercel.app', asset);
   } catch (err) {
     console.error(err);
   }
@@ -59,7 +59,7 @@ export async function postAsset(asset: CryptoAsset) {
 
 export async function deleteAsset(id: string) {
   try {
-    await axios.delete(`http://localhost:8080/${id}`);
+    await axios.delete(`https://mern-crypto-app-backend.vercel.app/${id}`);
   } catch (err) {
     console.error(err);
   }
@@ -67,7 +67,7 @@ export async function deleteAsset(id: string) {
 
 export async function editAsset(asset: CryptoAsset, id: string) {
   try {
-    await axios.put(`http://localhost:8080/${id}`, asset);
+    await axios.put(`https://mern-crypto-app-backend.vercel.app/${id}`, asset);
   } catch (err) {
     console.error(err);
   }
